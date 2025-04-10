@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="css/agendamento.css" rel="stylesheet">
+  <script src="script.js"></script>
+  <link href="../bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="css/cover.css" rel="stylesheet">
+  <script src="../assets/js/color-modes.js"></script>
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Health</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0 active" href="#">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="login.html">Cadastro</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Voluntários</a>
+          <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="agendamento.html">Agendamento</a>
+          <a class="nav-link fw-bold py-1 px-0" href="blog.html">Blog</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">FAQ</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Suporte</a>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <br>
+    <main class="px-3 flex-grow-1 d-flex flex-column justify-content-center">
+      <div id='calendar'></div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+  
+      let storedEvents = JSON.parse(localStorage.getItem("consultaSalvos")) || [];
+  
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        selectable: true,
+        events: storedEvents,
+  
+        dateClick: function (info) {
+          const title = prompt("Digite o título da consulta:");
+          if (title) {
+            const novConsulta = {
+              title: title,
+              start: info.dateStr,
+              allDay: true
+            };
+            calendar.addEvent(novConsulta);
+  
+            storedEvents.push(novConsulta);
+            localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+          }
+        },
+  
+        eventClick: function (info) {
+          const confirmDelete = confirm(`Deseja remover a consulta "${info.event.title}"?`);
+          if (confirmDelete) {
+            info.event.remove();
+  
+            // Remove também do LocalStorage
+            storedEvents = storedEvents.filter(e =>
+              !(e.title === info.event.title && e.start === info.event.startStr)
+            );
+            localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+          }
+        }
+      });
+  
+      calendar.render();
+    });
+  </script>
+</body>
+
+</html>
