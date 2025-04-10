@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Agendamento</title>
   <link href="css/agendamento.css" rel="stylesheet">
   <script src="script.js"></script>
   <link href="../bootstrap-5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,72 +12,102 @@
   <link href="css/cover.css" rel="stylesheet">
   <script src="../assets/js/color-modes.js"></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+  <style>
+    #calendar {
+      max-width: 100%;
+      min-height: 550px;
+    }
+  </style>
 </head>
 
-<body class="d-flex h-100 text-center text-bg-dark">
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
+<body class="d-flex h-100 text-bg-dark">
+  <div class="cover-container d-flex flex-column w-100 p-3 mx-auto">
+    <header class="mb-4">
       <div>
         <h3 class="float-md-start mb-0">Health</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="index.html">Home</a>
-                <a class="nav-link fw-bold py-1 px-0" href="login.html">Cadastro</a>
-                <a class="nav-link fw-bold py-1 px-0" href="#">Voluntários</a>
-                <a class="nav-link fw-bold py-1 px-0 active" href="agendamento.html">Agendamento</a>
-                <a class="nav-link fw-bold py-1 px-0" href="blog.html">Blog</a>
-                <a class="nav-link fw-bold py-1 px-0" href="faq.html">FAQ</a>
-                <a class="nav-link fw-bold py-1 px-0" href="suporte.html">Suporte</a>
-            </nav>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0" href="index.html">Home</a>
+          <a class="nav-link fw-bold py-1 px-0" href="login.html">Cadastro</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Voluntários</a>
+          <a class="nav-link fw-bold py-1 px-0 active" href="agendamento.html">Agendamento</a>
+          <a class="nav-link fw-bold py-1 px-0" href="blog.html">Blog</a>
+          <a class="nav-link fw-bold py-1 px-0" href="faq.html">FAQ</a>
+          <a class="nav-link fw-bold py-1 px-0" href="suporte.html">Suporte</a>
+        </nav>
       </div>
     </header>
-    <br>
-    <br>
-    <main class="px-3 flex-grow-1 d-flex flex-column justify-content-center">
-      <div id='calendar'></div>
+
+    <main class="row flex-grow-1 w-100">
+      <!-- Calendário à esquerda -->
+      <div class="col-md-8">
+        <div id='calendar' class="bg-light text-dark p-3 rounded"></div>
+      </div>
+
+      <!-- Lista de consultas à direita -->
+      <div class="col-md-4 mt-3 mt-md-0">
+        <h4>Consultas Agendadas</h4>
+        <ul id="listaConsultas" class="list-group text-start">
+          <!-- Consultas serão adicionadas aqui -->
+        </ul>
+      </div>
     </main>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-  
+      const calendarEl = document.getElementById('calendar');
+      const listaEl = document.getElementById('listaConsultas');
       let storedEvents = JSON.parse(localStorage.getItem("consultaSalvos")) || [];
-  
-      var calendar = new FullCalendar.Calendar(calendarEl, {
+
+      function atualizarLista() {
+        listaEl.innerHTML = '';
+        storedEvents.forEach(e => {
+          const item = document.createElement('li');
+          item.className = "list-group-item";
+          const data = new Date(e.start);
+          item.textContent = `${e.title} - ${data.toLocaleDateString('pt-BR')}`;
+          listaEl.appendChild(item);
+        });
+      }
+
+      const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         selectable: true,
+        aspectRatio: 1.6,
         events: storedEvents,
-  
+
         dateClick: function (info) {
           const title = prompt("Digite o título da consulta:");
           if (title) {
-            const novConsulta = {
+            // Corrigir fuso: gerar nova data sem hora
+            const dataCerta = new Date(info.dateStr + 'T00:00:00');
+            const novaConsulta = {
               title: title,
-              start: info.dateStr,
+              start: dataCerta.toISOString(),
               allDay: true
             };
-            calendar.addEvent(novConsulta);
-  
-            storedEvents.push(novConsulta);
+            calendar.addEvent(novaConsulta);
+            storedEvents.push(novaConsulta);
             localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+            atualizarLista();
           }
         },
-  
+
         eventClick: function (info) {
           const confirmDelete = confirm(`Deseja remover a consulta "${info.event.title}"?`);
           if (confirmDelete) {
             info.event.remove();
-  
-            // Remove também do LocalStorage
             storedEvents = storedEvents.filter(e =>
               !(e.title === info.event.title && e.start === info.event.startStr)
             );
             localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+            atualizarLista();
           }
         }
       });
-  
+
       calendar.render();
+      atualizarLista();
     });
   </script>
 </body>
