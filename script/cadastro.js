@@ -6,9 +6,35 @@ const mensagemSucessoUsuario = formUsuario.nextElementSibling;
 
 formUsuario.addEventListener('submit', function (e) {
     e.preventDefault();
+    
+    // Validação do nome
+    const nomeE = document.getElementById('nome'); //Pegar o elemento do nome
+    const nome = nomeE.value.trim(); //Pegar o texto do nome para colocar no JSON mais tarde
+    const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+    if (!regexNome.test(nome)) { //Testar o nome com o regex
+        nomeE.classList.add('is-invalid'); //Precisa adicionar uma div la no elemento para aparecer
+        e.preventDefault();
+        e.stopPropagation();
+        return; //Cancelar envio do formulario e retornar função
+    } else {
+        nomeE.classList.remove('is-invalid');
+        nomeE.classList.add('is-valid');
+    }
 
-    const nome = document.getElementById('nome').value.trim();
+    //Validação sobrenome
     const sobrenome = document.getElementById('sobrenome').value.trim();
+    // const sobrenome = sobrenomeE.value.trim();
+    // const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+    // if (!regexSobreNome.test(sobrenome)) { 
+    //     sobrenomeE.classList.add('is-invalid');
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     return; 
+    // } else {
+    //     sobrenomeE.classList.remove('is-invalid');
+    //     sobrenomeE.classList.add('is-valid');
+    // }
+
     const email = document.getElementById('email').value.trim();
     const senha = senhaUsuario.value;
     const confirmarSenha = confirmarSenhaUsuario.value;
