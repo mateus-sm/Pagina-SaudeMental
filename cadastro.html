@@ -206,7 +206,7 @@
 
                                             <div class="mb-3">
                                                 <label for="cnpj" class="form-label">CNPJ (opcional)</label>
-                                                <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00">
+                                                <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" maxlength="18" oninput="mascaraCNPJ(this)">
 												<div class="invalid-feedback">
                                                     Digite um CNPJ válido.
                                                 </div>
@@ -216,38 +216,58 @@
                                                 <label for="data-nascimento" class="form-label">Data de nascimento</label>
                                                 <input type="date" class="form-control" id="data-nascimento">
                                             </div>
-
+											<div class="invalid-feedback">
+                                                Digite uma data de nascimento válida.
+                                            </div>
 
                                             <div class="mb-3">
                                                 <label for="telefone" class="form-label">Telefone</label>
                                                 <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000"  maxlength="15">
                                             </div>
-
+											<div class="invalid-feedback">
+                                                Digite um telefone válido.
+                                            </div>
 
                                             <div class="mb-3">
                                                 <label for="cep" class="form-label">CEP</label>
-                                                <input type="text" class="form-control" id="cep" placeholder="00000-000"  maxlength="9">
+                                                <input type="text" class="form-control" id="cep" placeholder="00000-000" maxlength="9" oninput="mascaraCEP(this)">
+                                            </div>
+											<div class="invalid-feedback">
+                                                Digite um CEP válido.
                                             </div>
 
                                             <div class="mb-3">
                                             <label for="logradouro" class="form-label">Logradouro</label>
                                             <input type="text" class="form-control" id="logradouro" placeholder="Ex: Rua das Flores"  maxlength="55">
                                             </div>
+											<div class="invalid-feedback">
+                                                Digite um logradouro válido.
+                                            </div>
 
                                             <div class="row mb-3">
                                             <div class="col-md-4 mb-3 mb-md-0">
                                                 <label for="numero" class="form-label">Número</label>
-                                                <input type="text" class="form-control" id="numero" placeholder="Ex: 123" >
+                                                <input type="text" class="form-control" id="numero" placeholder="Ex: 123" maxlength="8">
                                             </div>
+											<div class="invalid-feedback">
+                                                Digite um número válido.
+                                            </div>
+
                                             <div class="col-md-4 mb-3 mb-md-0">
                                                 <label for="bairro" class="form-label">Bairro</label>
                                                 <input type="text" class="form-control" id="bairro" 
                                                     placeholder="Seu Bairro">
                                             </div>
+											<div class="invalid-feedback">
+                                                Digite um bairro válido.
+                                            </div>
                                             <div class="col-md-4">
                                                 <label for="cidade" class="form-label">Cidade</label>
                                                 <input type="text" class="form-control" id="cidade" 
                                                     placeholder="Sua cidade">
+                                            </div>
+											<div class="invalid-feedback">
+                                                Digite uma cidade válida.
                                             </div>
                                             </div>
 
@@ -267,13 +287,19 @@
 
                                             <div class="mb-3">
                                                 <label for="profissao" class="form-label">Profissão</label>
-                                                <input type="text" class="form-control" id="profissao " 
+                                                <input type="text" class="form-control" id="profissao" 
                                                     placeholder="Sua profissão" maxlength="25">
+                                            </div>
+											<div class="invalid-feedback">
+                                                Digite uma profissão válida.
                                             </div>
 
                                             <div class="mb-3">
                                                 <label for="registro" class="form-label">Registro Profissional</label>
                                                 <input type="text" class="form-control" id="registro" placeholder="Ex: CRP 00/00000" maxlength="20">
+                                            </div>
+											<div class="invalid-feedback">
+                                                Digite um registro profissional válido.
                                             </div>
 
                                             <div class="mb-3">
