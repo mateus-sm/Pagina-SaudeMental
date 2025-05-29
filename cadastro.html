@@ -1,201 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Cadastro | Rede de Apoio</title>
-		<meta name="description" content="Crie sua conta na Rede de Apoio para Saúde Mental">
-		
-		<!-- Bootstrap -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro | Rede de Apoio</title>
+        <meta name="description" content="Crie sua conta na Rede de Apoio para Saúde Mental">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
-		<link rel="stylesheet" href="css/styles.css">
-		<script src="script/olaNome.js" defer></script>
-		<script src="script/cadastro.js" defer></script>
-	</head>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="script/olaNome.js" defer></script>
+        <script src="script/cadastro.js" defer></script>
+    </head>
 
-	<body>
-		<!-- Header -->
-		<header class="sticky-top">
-			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-				<div class="container">
-					<a class="navbar-brand d-flex align-items-center" href="index.html">
-						<div class="rounded-circle bg-teal p-1 me-2">
-							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-white bi-heart-pulse" viewBox="0 0 16 16">
-								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
-								<path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
-							</svg>
-						</div>
-						<span class="fw-bold text-teal">Rede de Apoio</span>
-					</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarNav">
-						<ul class="navbar-nav me-auto">
-							<li class="nav-item">
-								<a class="nav-link" href="index.html">Início</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="voluntarios.html">Voluntários</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="agendamento.html">Agendamento</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="blog.html">Blog</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="faq.html">FAQ</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="contato.html">Contato</a>
-							</li>
-						</ul>
-						<div id="area-login" class="d-flex gap-2">
-							<!-- Injetado por JS -->
-						</div>
-					</div>
-				</div>
-			</nav>
-		</header>
+    <body>
+        <header class="sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <div class="rounded-circle bg-teal p-1 me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-white bi-heart-pulse" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
+                                <path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
+                            </svg>
+                        </div>
+                        <span class="fw-bold text-teal">Rede de Apoio</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="voluntarios.html">Voluntários</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="agendamento.html">Agendamento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="faq.html">FAQ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contato.html">Contato</a>
+                            </li>
+                        </ul>
+                        <div id="area-login" class="d-flex gap-2">
+                            </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-		<main>
-			<div class="container py-5 py-md-7">
-				<div class="row justify-content-center">
-					<div class="col-md-10 col-lg-8">
-						<ul class="nav nav-tabs mb-4" id="cadastroTab" role="tablist">
-							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="usuario-tab" data-bs-toggle="tab"
-									data-bs-target="#usuario" type="button" role="tab" aria-controls="usuario"
-									aria-selected="true">Busco Ajuda</button>
-							</li>
-							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="voluntario-tab" data-bs-toggle="tab"
-									data-bs-target="#voluntario" type="button" role="tab" aria-controls="voluntario"
-									aria-selected="false">Quero Ajudar</button>
-							</li>
-						</ul>
-						<div class="tab-content" id="cadastroTabContent">
-							<!-- Cadastro de Usuário -->
-							<div class="tab-pane fade show active" id="usuario" role="tabpanel"
-								aria-labelledby="usuario-tab">
-								<div class="card border-0 shadow-sm">
-									<div class="card-header bg-white border-0 pt-4">
-										<h1 class="h3 mb-1">Cadastro de Usuário</h1>
-										<p class="text-muted">Crie sua conta para encontrar apoio emocional.</p>
-									</div>
-									<div class="card-body">
-										<form id="form-usuario">
-											<div class="row mb-3">
-												<div class="col-md-6 mb-3 mb-md-0">
-													<label for="nome" class="form-label">Nome</label>
-													<input type="text" class="form-control" id="nome"
-														placeholder="Seu nome">
-													<div class="invalid-feedback">
-														Digite um nome válido (apenas letras).
-													</div>
-												</div>
-												<div class="col-md-6">
-													<label for="sobrenome" class="form-label">Sobrenome</label>
-													<input type="text" class="form-control" id="sobrenome"
-														placeholder="Seu sobrenome">
-													<div class="invalid-feedback">
-														Digite um sobrenome válido (apenas letras e espaços).
-													</div>
-												</div>
-											</div>
-											<div class="mb-3">
-												<label for="email" class="form-label">E-mail</label>
-												<input type="email" class="form-control" id="email"
-													placeholder="seu.email@exemplo.com">
-											</div>
-											<div class="mb-3">
-												<label for="senha" class="form-label">Senha</label>
-												<input type="password" class="form-control" id="senha"
-													placeholder="Crie uma senha segura">
-											</div>
-											<div class="mb-3">
-												<label for="confirmar-senha" class="form-label">Confirmar Senha</label>
-												<input type="password" class="form-control" id="confirmar-senha"
-													placeholder="Confirme sua senha">
-												<div class="invalid-feedback" id="senha-feedbackU">
-													As senhas não coincidem.
-												</div>
-											</div>
-											<div class="mb-4">
-												<label class="form-label">Qual tipo de apoio você busca?</label>
-												<div class="form-check mb-2">
-													<input class="form-check-input" type="radio" name="tipoApoio"
-														id="individual" value="individual" checked>
-													<label class="form-check-label" for="individual">
-														Atendimento individual
-													</label>
-												</div>
-												<div class="form-check mb-2">
-													<input class="form-check-input" type="radio" name="tipoApoio" id="grupo"
-														value="grupo">
-													<label class="form-check-label" for="grupo">
-														Grupo de apoio
-													</label>
-												</div>
-												<div class="form-check">
-													<input class="form-check-input" type="radio" name="tipoApoio" id="ambos"
-														value="ambos">
-													<label class="form-check-label" for="ambos">
-														Ambos
-													</label>
-												</div>
-											</div>
-											<button type="submit" class="btn btn-teal w-100 mb-3">Criar Conta</button>
-											<p class="text-center text-muted small">
-												Já tem uma conta? <a href="login.html"
-													class="text-teal text-decoration-none">Faça login</a>
-											</p>
-										</form>
-										<div id="mensagem-sucesso" class="text-center d-none">
-											<h4 class="text-success">Cadastro realizado com sucesso!</h4>
-											<p>Você já pode fazer login usando seu e-mail e senha.</p>
-											<a href="login.html" class="btn btn-success mt-3">Ir para o Login</a>
-										</div>
-									</div>
-								</div>
-							</div>
+        <main>
+            <div class="container py-5 py-md-7">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8">
+                        <ul class="nav nav-tabs mb-4" id="cadastroTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="usuario-tab" data-bs-toggle="tab"
+                                    data-bs-target="#usuario" type="button" role="tab" aria-controls="usuario"
+                                    aria-selected="true">Busco Ajuda</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="voluntario-tab" data-bs-toggle="tab"
+                                    data-bs-target="#voluntario" type="button" role="tab" aria-controls="voluntario"
+                                    aria-selected="false">Quero Ajudar</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="cadastroTabContent">
+                            <div class="tab-pane fade show active" id="usuario" role="tabpanel"
+                                aria-labelledby="usuario-tab">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-header bg-white border-0 pt-4">
+                                        <h1 class="h3 mb-1">Cadastro de Usuário</h1>
+                                        <p class="text-muted">Crie sua conta para encontrar apoio emocional.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="form-usuario">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6 mb-3 mb-md-0">
+                                                    <label for="nome" class="form-label">Nome</label>
+                                                    <input type="text" class="form-control" id="nome"
+                                                        placeholder="Seu nome">
+                                                    <div class="invalid-feedback">
+                                                        Digite um nome válido (apenas letras).
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                                                    <input type="text" class="form-control" id="sobrenome"
+                                                        placeholder="Seu sobrenome">
+                                                    <div class="invalid-feedback">
+                                                        Digite um sobrenome válido (apenas letras e espaços).
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">E-mail</label>
+                                                <input type="email" class="form-control" id="email"
+                                                    placeholder="seu.email@exemplo.com">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="senha" class="form-label">Senha</label>
+                                                <input type="password" class="form-control" id="senha"
+                                                    placeholder="Crie uma senha segura">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="confirmar-senha" class="form-label">Confirmar Senha</label>
+                                                <input type="password" class="form-control" id="confirmar-senha"
+                                                    placeholder="Confirme sua senha">
+                                                <div class="invalid-feedback" id="senha-feedbackU">
+                                                    As senhas não coincidem.
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label class="form-label">Qual tipo de apoio você busca?</label>
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" type="radio" name="tipoApoio"
+                                                        id="individual" value="individual" checked>
+                                                    <label class="form-check-label" for="individual">
+                                                        Atendimento individual
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" type="radio" name="tipoApoio" id="grupo"
+                                                        value="grupo">
+                                                    <label class="form-check-label" for="grupo">
+                                                        Grupo de apoio
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="tipoApoio" id="ambos"
+                                                        value="ambos">
+                                                    <label class="form-check-label" for="ambos">
+                                                        Ambos
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-teal w-100 mb-3">Criar Conta</button>
+                                            <p class="text-center text-muted small">
+                                                Já tem uma conta? <a href="login.html"
+                                                    class="text-teal text-decoration-none">Faça login</a>
+                                            </p>
+                                        </form>
+                                        <div id="mensagem-sucesso" class="text-center d-none">
+                                            <h4 class="text-success">Cadastro realizado com sucesso!</h4>
+                                            <p>Você já pode fazer login usando seu e-mail e senha.</p>
+                                            <a href="login.html" class="btn btn-success mt-3">Ir para o Login</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-							<!-- Cadastro de Voluntário -->
-							<div class="tab-pane fade" id="voluntario" role="tabpanel" aria-labelledby="voluntario-tab">
-								<div class="card border-0 shadow-sm">
-									<div class="card-header bg-white border-0 pt-4">
-										<h1 class="h3 mb-1">Cadastro de Voluntário</h1>
-										<p class="text-muted">Junte-se à nossa rede de apoio como voluntário.</p>
-									</div>
-									<div class="card-body">
-										<form id="form-voluntario">
-											<div class="row mb-3">
-												<div class="col-md-6 mb-3">
-												<label for="nome-vol" class="form-label">Nome</label>
-												<input type="text" class="form-control" id="nome-vol" required
-													placeholder="Seu nome">
+                            <div class="tab-pane fade" id="voluntario" role="tabpanel" aria-labelledby="voluntario-tab">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-header bg-white border-0 pt-4">
+                                        <h1 class="h3 mb-1">Cadastro de Voluntário</h1>
+                                        <p class="text-muted">Junte-se à nossa rede de apoio como voluntário.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="form-voluntario">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6 mb-3">
+                                                <label for="nome-vol" class="form-label">Nome</label>
+                                                <input type="text" class="form-control" id="nome-vol"
+                                                	placeholder="Seu nome">
+												<div class="invalid-feedback">
+													Digite um nome válido (apenas letras).
 												</div>
-												<div class="col-md-6">
-												<label for="sobrenome-vol" class="form-label">Sobrenome</label>
-												<input type="text" class="form-control" id="sobrenome-vol" required
-													placeholder="Seu sobrenome">
+                                                </div>
+                                                <div class="col-md-6">
+                                                <label for="sobrenome-vol" class="form-label">Sobrenome</label>
+                                                <input type="text" class="form-control" id="sobrenome-vol"
+                                                	placeholder="Seu sobrenome">
+												<div class="invalid-feedback">
+                                                    Digite um sobrenome válido (apenas letras).
+                                                </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="email-vol" class="form-label">E-mail</label>
+                                                <input type="email" class="form-control" id="email-vol" 
+                                                	placeholder="seu.email@exemplo.com">
+												<div class="invalid-feedback">
+													Digite um e-mail válido (que contenha @).
 												</div>
-											</div>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="email-vol" class="form-label">E-mail</label>
-												<input type="email" class="form-control" id="email-vol" required
-													placeholder="seu.email@exemplo.com">
-											</div>
+                                            <div class="mb-3">
+                                                <label for="cpf" class="form-label">CPF</label>
+                                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="14" oninput="mascaraCPF(this)" >
+												<div class="invalid-feedback">
+                                                    Digite um CPF válido.
+                                                </div>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="cpf" class="form-label">CPF</label>
-												<input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" required>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="cnpj" class="form-label">CNPJ (opcional)</label>
+                                                <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00">
+												<div class="invalid-feedback">
+                                                    Digite um CNPJ válido.
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="data-nascimento" class="form-label">Data de nascimento</label>
+                                                <input type="date" class="form-control" id="data-nascimento">
+                                            </div>
 
 											<div class="mb-3">
 												<label for="cnpj" class="form-label">CNPJ (opcional)</label>
@@ -205,248 +225,275 @@
 												</div>
 											</div>
 
-											<div class="mb-3">
-												<label for="data-nascimento" class="form-label">Data de nascimento</label>
-												<input type="date" class="form-control" id="data-nascimento" required>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="telefone" class="form-label">Telefone</label>
+                                                <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000"  maxlength="15">
+                                            </div>
 
-											<div class="mb-3">
-												<label for="telefone" class="form-label">Telefone</label>
-												<input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000" required>
-											</div>
 
-											<div class="mb-3">
-												<label for="cep" class="form-label">CEP</label>
-												<input type="text" class="form-control" id="cep" placeholder="00000-000" required>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="cep" class="form-label">CEP</label>
+                                                <input type="text" class="form-control" id="cep" placeholder="00000-000"  maxlength="9">
+                                            </div>
 
-											<div class="mb-3">
-											<label for="logradouro" class="form-label">Logradouro</label>
-											<input type="text" class="form-control" id="logradouro" placeholder="Ex: Rua das Flores" required>
-											</div>
+                                            <div class="mb-3">
+                                            <label for="logradouro" class="form-label">Logradouro</label>
+                                            <input type="text" class="form-control" id="logradouro" placeholder="Ex: Rua das Flores"  maxlength="55">
+                                            </div>
 
-											<div class="row mb-3">
-											<div class="col-md-4 mb-3 mb-md-0">
-												<label for="numero" class="form-label">Número</label>
-												<input type="text" class="form-control" id="numero" placeholder="Ex: 123" required>
-											</div>
-											<div class="col-md-4 mb-3 mb-md-0">
-												<label for="bairro" class="form-label">Bairro</label>
-												<input type="text" class="form-control" id="bairro" required
-													placeholder="Seu Bairro">
-											</div>
-											<div class="col-md-4">
-												<label for="cidade" class="form-label">Cidade</label>
-												<input type="text" class="form-control" id="cidade" required
-													placeholder="Sua cidade">
-											</div>
-											</div>
+                                            <div class="row mb-3">
+                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                <label for="numero" class="form-label">Número</label>
+                                                <input type="text" class="form-control" id="numero" placeholder="Ex: 123" >
+                                            </div>
+                                            <div class="col-md-4 mb-3 mb-md-0">
+                                                <label for="bairro" class="form-label">Bairro</label>
+                                                <input type="text" class="form-control" id="bairro" 
+                                                    placeholder="Seu Bairro">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="cidade" class="form-label">Cidade</label>
+                                                <input type="text" class="form-control" id="cidade" 
+                                                    placeholder="Sua cidade">
+                                            </div>
+                                            </div>
 
-											<div class="mb-3">
-											<label for="estado" class="form-label">Estado</label>
-											<select class="form-select" id="estado" required>
-												<option selected disabled value="">Selecione o estado</option>
-												<option>AC</option><option>AL</option><option>AP</option><option>AM</option>
-												<option>BA</option><option>CE</option><option>DF</option><option>ES</option>
-												<option>GO</option><option>MA</option><option>MT</option><option>MS</option>
-												<option>MG</option><option>PA</option><option>PB</option><option>PR</option>
-												<option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-												<option>RS</option><option>RO</option><option>RR</option><option>SC</option>
-												<option>SP</option><option>SE</option><option>TO</option>
-											</select>
-											</div>
+                                            <div class="mb-3">
+                                            <label for="estado" class="form-label">Estado</label>
+                                            <select class="form-select" id="estado" >
+                                                <option selected disabled value="">Selecione o estado</option>
+                                                <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                                                <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                                                <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                                                <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                                                <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                                                <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                                                <option>SP</option><option>SE</option><option>TO</option>
+                                            </select>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="profissao" class="form-label">Profissão</label>
-												<input type="text" class="form-control" id="profissao" required
-													placeholder="Sua profissão">
-											</div>
+                                            <div class="mb-3">
+                                                <label for="profissao" class="form-label">Profissão</label>
+                                                <input type="text" class="form-control" id="profissao " 
+                                                    placeholder="Sua profissão" maxlength="25">
+                                            </div>
 
-											<div class="mb-3">
-												<label for="registro" class="form-label">Registro Profissional</label>
-												<input type="text" class="form-control" id="registro" placeholder="Ex: CRP 00/00000">
-											</div>
+                                            <div class="mb-3">
+                                                <label for="registro" class="form-label">Registro Profissional</label>
+                                                <input type="text" class="form-control" id="registro" placeholder="Ex: CRP 00/00000" maxlength="20">
+                                            </div>
 
-											<div class="mb-3">
-												<label for="especialidades" class="form-label">Especialidades</label><br>
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="ansiedade" value="Ansiedade">
-													<label class="form-check-label" for="ansiedade">Ansiedade</label>
-												</div>
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="depressao" value="Depressão">
-													<label class="form-check-label" for="depressao">Depressão</label>
-												</div>
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="autoestima" value="Autoestima">
-													<label class="form-check-label" for="autoestima">Autoestima</label>
-												</div>
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="luto" value="Luto">
-													<label class="form-check-label" for="luto">Luto</label>
-												</div>
-												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox" id="resiliencia" value="Resiliencia">
-													<label class="form-check-label" for="resiliencia">Resiliencia</label>
-												</div>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="especialidades" class="form-label">Especialidades</label><br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="ansiedade" value="Ansiedade">
+                                                    <label class="form-check-label" for="ansiedade">Ansiedade</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="depressao" value="Depressão">
+                                                    <label class="form-check-label" for="depressao">Depressão</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="autoestima" value="Autoestima">
+                                                    <label class="form-check-label" for="autoestima">Autoestima</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="luto" value="Luto">
+                                                    <label class="form-check-label" for="luto">Luto</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="resiliencia" value="Resiliencia">
+                                                    <label class="form-check-label" for="resiliencia">Resiliencia</label>
+                                                </div>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="biografia" class="form-label">Mini Biografia</label>
-												<textarea class="form-control" id="biografia" rows="3" minlength="30" required></textarea>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="biografia" class="form-label">Mini Biografia</label>
+                                                <textarea class="form-control" id="biografia" rows="3" minlength="10" maxlength="100"></textarea>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="disponibilidade" class="form-label">Disponibilidade</label>
-												<select class="form-select" id="disponibilidade" required>
-												<option selected disabled>Escolha uma opção</option>
-												<option>Segunda e Quarta, 18h-21h</option>
-												<option>Terça e Quinta, 14h-17h</option>
-												<option>Somente fins de semana</option>
-												</select>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="disponibilidade" class="form-label">Disponibilidade</label>
+                                                <select class="form-select" id="disponibilidade" >
+                                                <option selected disabled>Escolha uma opção</option>
+                                                <option>Segunda e Quarta, 18h-21h</option>
+                                                <option>Terça e Quinta, 14h-17h</option>
+                                                <option>Somente fins de semana</option>
+                                                </select>
+                                            </div>
 
-											<div class="mb-3">
-												<label class="form-label">Tipo de Atendimento</label>
-												<div class="form-check">
-												<input class="form-check-input" type="radio" name="tipoAtendimento" id="online" value="Online" required>
-												<label class="form-check-label" for="online">Online</label>
-												</div>
-												<div class="form-check">
-												<input class="form-check-input" type="radio" name="tipoAtendimento" id="presencial" value="Presencial">
-												<label class="form-check-label" for="presencial">Presencial</label>
-												</div>
-											</div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tipo de Atendimento</label>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tipoAtendimento" id="online" value="Online" >
+                                                <label class="form-check-label" for="online">Online</label>
+                                                </div>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tipoAtendimento" id="presencial" value="Presencial">
+                                                <label class="form-check-label" for="presencial">Presencial</label>
+                                                </div>
+                                            </div>
 
-											<div class="mb-3">
-												<label class="form-label">Tipo de Voluntariado</label>
-												<div class="form-check">
-												<input class="form-check-input" type="radio" name="tipoVoluntariado" id="individual" value="individual" required>
-												<label class="form-check-label" for="individual">Atendimento individual</label>
-												</div>
-												<div class="form-check">
-												<input class="form-check-input" type="radio" name="tipoVoluntariado" id="grupo" value="grupo">
-												<label class="form-check-label" for="grupo">Facilitador de grupo de apoio</label>
-												</div>
-											</div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tipo de Voluntariado</label>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tipoVoluntariado" id="individual-vol" value="individual" > <label class="form-check-label" for="individual-vol">Atendimento individual</label>
+                                                </div>
+                                                <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="tipoVoluntariado" id="grupo-vol" value="grupo"> <label class="form-check-label" for="grupo-vol">Facilitador de grupo de apoio</label>
+                                                </div>
+                                            </div>
 
-											<div class="mb-3">
-												<label for="senha-vol" class="form-label">Senha</label>
-												<input type="password" class="form-control" id="senha-vol" required
-													placeholder="Crie uma senha segura">
-											</div>
+                                            <div class="mb-3">
+                                                <label for="senha-vol" class="form-label">Senha</label>
+                                                <input type="password" class="form-control" id="senha-vol" 
+                                                    placeholder="Crie uma senha segura">
+                                            </div>
 
-											<div class="mb-3">
-												<label for="confirmar-senha-vol" class="form-label">Confirmar Senha</label>
-												<input type="password" class="form-control" id="confirmar-senha-vol" required
-													placeholder="Confirme sua senha">
-												<div class="invalid-feedback" id="senha-feedbackV">As senhas não coincidem.</div>
-											</div>
+                                            <div class="mb-3">
+                                                <label for="confirmar-senha-vol" class="form-label">Confirmar Senha</label>
+                                                <input type="password" class="form-control" id="confirmar-senha-vol" 
+                                                    placeholder="Confirme sua senha">
+                                                <div class="invalid-feedback" id="senha-feedbackV">As senhas não coincidem.</div>
+                                            </div>
 
-											<div class="form-check mb-3">
-												<input class="form-check-input" type="checkbox" id="termos" required>
-												<label class="form-check-label" for="termos">
-												Concordo com os termos de uso
-												</label>
-											</div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="termos">
+                                                <label class="form-check-label" for="termos">
+                                                Concordo com os termos de uso
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-teal w-100 mb-3">Cadastrar como Voluntário</button>
+                                            <p class="text-center text-muted small">
+                                                Já tem uma conta? <a href="login.html" class="text-teal text-decoration-none">Faça login</a>
+                                            </p>
+                                            </form>
 
-											<button type="submit" class="btn btn-teal w-100 mb-3">Cadastrar como Voluntário</button>
+                                            <div id="mensagem-sucesso-voluntario" class="text-center d-none">
+                                                <h4 class="text-success">Cadastro de voluntário realizado com sucesso!</h4>
+                                                <p>Agradecemos seu interesse! Em breve entraremos em contato.</p>
+                                                <a href="index.html" class="btn btn-success mt-3">Voltar para o Início</a>
+                                            </div>
 
-											<p class="text-center text-muted small">
-												Já tem uma conta? <a href="login.html" class="text-teal text-decoration-none">Faça login</a>
-											</p>
-											</form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-											<div id="mensagem-sucesso" class="text-center d-none">
-											<h4 class="text-success">Cadastro realizado com sucesso!</h4>
-											<p>Você já pode fazer login usando seu e-mail e senha.</p>
-											<a href="login.html" class="btn btn-success mt-3">Ir para o Login</a>
-											</div>
+        <footer class="bg-white border-top py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="mb-4">Rede de Apoio</h5>
+                        <p class="text-muted small">
+                            Conectando voluntários a pessoas que precisam de apoio emocional.
+                        </p>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="#" class="text-muted">
+                                <i class="bi bi-facebook"></i>
+                                <span class="visually-hidden">Facebook</span>
+                            </a>
+                            <a href="#" class="text-muted">
+                                <i class="bi bi-instagram"></i>
+                                <span class="visually-hidden">Instagram</span>
+                            </a>
+                            <a href="#" class="text-muted">
+                                <i class="bi bi-twitter"></i>
+                                <span class="visually-hidden">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="mb-4">Links Rápidos</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="index.html" class="text-muted text-decoration-none">Início</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="voluntarios.html" class="text-muted text-decoration-none">Voluntários</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="agendamento.html" class="text-muted text-decoration-none">Agendamento</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="blog.html" class="text-muted text-decoration-none">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="mb-4">Suporte</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="faq.html" class="text-muted text-decoration-none">FAQ</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contato.html" class="text-muted text-decoration-none">Contato</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="text-muted text-decoration-none">Termos de Uso</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="text-muted text-decoration-none">Política de
+                                    Privacidade</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="mb-4">Emergência</h5>
+                        <p class="text-muted small mb-2">Em caso de emergência, ligue:</p>
+                        <p class="h4 fw-bold text-teal">188</p>
+                        <p class="text-muted small mt-2">Centro de Valorização da Vida (CVV)</p>
+                    </div>
+                </div>
+                <div class="border-top mt-5 pt-4 text-center text-muted small">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear())</script> Rede de Apoio para Saúde Mental. Todos os
+                        direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
 
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Verifica se a URL contém o hash #voluntario
+          if (window.location.hash === '#voluntario') {
+            // Encontra o botão da aba "Quero Ajudar"
+            var voluntarioTabButton = document.getElementById('voluntario-tab');
+        
+            if (voluntarioTabButton) {
+              // Cria uma instância da aba Bootstrap e a exibe
+              var tab = new bootstrap.Tab(voluntarioTabButton);
+              tab.show();
+            }
+          }
+        });
+        </script>
 
-		<!-- Footer -->
-		<footer class="bg-white border-top py-5">
-			<div class="container">
-				<div class="row g-4">
-					<div class="col-lg-3 col-md-6">
-						<h5 class="mb-4">Rede de Apoio</h5>
-						<p class="text-muted small">
-							Conectando voluntários a pessoas que precisam de apoio emocional.
-						</p>
-						<div class="d-flex gap-3 mt-3">
-							<a href="#" class="text-muted">
-								<i class="bi bi-facebook"></i>
-								<span class="visually-hidden">Facebook</span>
-							</a>
-							<a href="#" class="text-muted">
-								<i class="bi bi-instagram"></i>
-								<span class="visually-hidden">Instagram</span>
-							</a>
-							<a href="#" class="text-muted">
-								<i class="bi bi-twitter"></i>
-								<span class="visually-hidden">Twitter</span>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<h5 class="mb-4">Links Rápidos</h5>
-						<ul class="list-unstyled">
-							<li class="mb-2">
-								<a href="index.html" class="text-muted text-decoration-none">Início</a>
-							</li>
-							<li class="mb-2">
-								<a href="voluntarios.html" class="text-muted text-decoration-none">Voluntários</a>
-							</li>
-							<li class="mb-2">
-								<a href="agendamento.html" class="text-muted text-decoration-none">Agendamento</a>
-							</li>
-							<li class="mb-2">
-								<a href="blog.html" class="text-muted text-decoration-none">Blog</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<h5 class="mb-4">Suporte</h5>
-						<ul class="list-unstyled">
-							<li class="mb-2">
-								<a href="faq.html" class="text-muted text-decoration-none">FAQ</a>
-							</li>
-							<li class="mb-2">
-								<a href="contato.html" class="text-muted text-decoration-none">Contato</a>
-							</li>
-							<li class="mb-2">
-								<a href="#" class="text-muted text-decoration-none">Termos de Uso</a>
-							</li>
-							<li class="mb-2">
-								<a href="#" class="text-muted text-decoration-none">Política de
-									Privacidade</a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<h5 class="mb-4">Emergência</h5>
-						<p class="text-muted small mb-2">Em caso de emergência, ligue:</p>
-						<p class="h4 fw-bold text-teal">188</p>
-						<p class="text-muted small mt-2">Centro de Valorização da Vida (CVV)</p>
-					</div>
-				</div>
-				<div class="border-top mt-5 pt-4 text-center text-muted small">
-					<p>&copy;
-						<script>document.write(new Date().getFullYear())</script> Rede de Apoio para Saúde Mental. Todos os
-						direitos reservados.
-					</p>
-				</div>
-			</div>
-		</footer>
+		<script>
+    const telefoneInput = document.getElementById('telefone');
 
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-	</body>
+    telefoneInput.addEventListener('input', function () {
+        // Remove tudo que não for número
+        let numero = this.value.replace(/\D/g, '');
+
+        // Aplica a máscara
+        if (numero.length <= 10) {
+            // Telefone fixo (XX) XXXX-XXXX
+            numero = numero.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else {
+            // Celular (XX) 9XXXX-XXXX
+            numero = numero.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+        }
+
+        this.value = numero;
+    });
+</script>
+    </body>
 </html>
