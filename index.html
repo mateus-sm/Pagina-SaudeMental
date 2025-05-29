@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rede de Apoio</title>
+		<meta name="description" content="Conectando voluntários a pessoas que precisam de apoio emocional">
+		
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="script/olaNome.js" defer></script>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header class="sticky-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="index.html">
+						<div class="rounded-circle bg-teal p-1 me-2">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-white bi-heart-pulse" viewBox="0 0 16 16">
+								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
+								<path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
+							</svg>
+						</div>
+						<span class="fw-bold text-teal">Rede de Apoio</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav me-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Início</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="voluntarios.html">Voluntários</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="agendamento.html">Agendamento</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="blog.html">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="faq.html">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contato.html">Contato</a>
+							</li>
+						</ul>
+						<div id="area-login" class="d-flex gap-2">
+							<!-- Injetado por JS -->
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<!-- Cuidando de Você -->
+			<section class="bg-gradient-to-b from-teal-50 to-white py-5 py-md-7">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 mb-5 mb-lg-0">
+							<h1 class="display-4 fw-bold mb-3">Cuidando de Você, Cuidando da Mente</h1>
+							<p class="lead text-muted mb-4">
+                        		Bem-vindo ao Saúde Mental, um espaço dedicado a oferecer apoio e acolhimento. Aqui, 
+								você encontra informações confiáveis, conteúdos inspiradores e a conexão com voluntários 
+								e profissionais prontos para ajudar na sua jornada rumo ao bem-estar. Descubra recursos, 
+								agende atendimentos e fortaleça sua saúde emocional conosco.
+							</p>
+							<div class="d-flex flex-column flex-sm-row gap-2">
+								<a href="cadastro.html" class="btn btn-teal btn-lg">Buscar Ajuda</a>
+								<a href="cadastro.html" class="btn btn-outline-teal btn-lg">Seja Voluntário</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<img src="assets/saude mental 16-9.png" class="img-fluid rounded">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Como funciona -->
+			<section class="py-5 py-md-7">
+				<div class="container">
+					<div class="text-center mb-5">
+						<h2 class="display-5 fw-bold mb-3">Como Funciona</h2>
+						<p class="lead text-muted mx-auto" style="max-width: 700px;">
+							Nossa plataforma conecta pessoas que precisam de apoio emocional a profissionais e grupos
+							voluntários, de
+							forma simples e acessível.
+						</p>
+					</div>
+					<div class="row g-4">
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-people text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Conecte-se</h3>
+									<p class="card-text text-muted">
+										Crie uma conta e preencha um breve questionário sobre suas necessidades emocionais.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-search text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Encontre Ajuda</h3>
+									<p class="card-text text-muted">
+										Navegue por perfis de psicólogos, terapeutas e grupos de apoio disponíveis para
+										atendimento.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-calendar-check text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Agende Sessões</h3>
+									<p class="card-text text-muted">
+										Marque sessões individuais ou participe de grupos de apoio de acordo com sua
+										disponibilidade.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-chat-dots text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Receba Suporte</h3>
+									<p class="card-text text-muted">
+										Participe de sessões online ou presenciais e receba o apoio emocional que você
+										precisa.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-heart text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Acompanhamento</h3>
+									<p class="card-text text-muted">
+										Mantenha um histórico de suas sessões e acompanhe seu progresso ao longo do tempo.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle mb-3"
+										style="width: 48px; height: 48px;">
+										<i class="bi bi-shield-check text-teal"></i>
+									</div>
+									<h3 class="card-title h5">Privacidade</h3>
+									<p class="card-text text-muted">
+										Garantimos a confidencialidade e segurança de todas as informações compartilhadas na
+										plataforma.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Depoimentos -->
+			<section class="py-5 py-md-7 bg-light">
+				<div class="container">
+					<div class="text-center mb-5">
+						<h2 class="display-5 fw-bold mb-3">Depoimentos</h2>
+						<p class="lead text-muted mx-auto" style="max-width: 700px;">
+							Veja como nossa rede de apoio tem ajudado pessoas a melhorar sua saúde mental.
+						</p>
+					</div>
+					<div class="row g-4">
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center mb-4">
+										<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle" style="width: 48px; height: 48px;">
+											<i class="bi bi-person-bounding-box text-teal"></i>
+										</div>
+										<div>
+											<h5 class="mb-0">Maria S.</h5>
+											<p class="text-muted small mb-0">Usuária há 6 meses</p>
+										</div>
+									</div>
+									<p class="card-text text-muted">
+										"Encontrar a Rede de Apoio foi um divisor de águas na minha vida. As sessões com
+										minha psicóloga
+										voluntária me ajudaram a superar um momento muito difícil."
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center mb-4">
+										<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle" style="width: 48px; height: 48px;">
+											<i class="bi bi-person-bounding-box text-teal"></i>
+										</div>
+										<div>
+											<h5 class="mb-0">Carlos R.</h5>
+											<p class="text-muted small mb-0">Usuário há 3 meses</p>
+										</div>
+									</div>
+									<p class="card-text text-muted">
+										"Participar dos grupos de apoio me fez perceber que não estou sozinho. Compartilhar
+										experiências com
+										pessoas que passam por situações semelhantes tem sido fundamental."
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div class="card h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<div class="d-flex align-items-center mb-4">
+										<div class="d-flex align-items-center justify-content-center bg-teal-100 rounded-circle" style="width: 48px; height: 48px;">
+											<i class="bi bi-person-bounding-box text-teal"></i>
+										</div>
+										<div>
+											<h5 class="mb-0">Ana P.</h5>
+											<p class="text-muted small mb-0">Psicóloga voluntária</p>
+										</div>
+									</div>
+									<p class="card-text text-muted">
+										"Como profissional, poder contribuir com meu conhecimento para ajudar pessoas que
+										não teriam acesso a
+										atendimento psicológico é extremamente gratificante."
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Junte-se -->
+			<section class="py-5 py-md-7">
+				<div class="container">
+					<div class="bg-teal-50 rounded-4 p-4 p-md-5">
+						<div class="text-center mx-auto" style="max-width: 800px;">
+							<h2 class="display-5 fw-bold mb-3">Junte-se à nossa rede de apoio</h2>
+							<p class="lead text-muted mb-4">
+								Seja como alguém que busca ajuda ou como voluntário, você pode fazer parte desta comunidade
+								que valoriza o
+								bem-estar emocional e a saúde mental.
+							</p>
+							<div class="d-flex flex-column flex-sm-row justify-content-center gap-2">
+								<a href="cadastro.html" class="btn btn-teal btn-lg">Buscar Ajuda</a>
+								<a href="cadastro.html" class="btn btn-outline-teal btn-lg">Seja Voluntário</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-white border-top py-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Rede de Apoio</h5>
+						<p class="text-muted small">
+							Conectando voluntários a pessoas que precisam de apoio emocional.
+						</p>
+						<div class="d-flex gap-3 mt-3">
+							<a href="#" class="text-muted">
+								<i class="bi bi-facebook"></i>
+								<span class="visually-hidden">Facebook</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-instagram"></i>
+								<span class="visually-hidden">Instagram</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-twitter"></i>
+								<span class="visually-hidden">Twitter</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Links Rápidos</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="index.html" class="text-muted text-decoration-none">Início</a>
+							</li>
+							<li class="mb-2">
+								<a href="voluntarios.html" class="text-muted text-decoration-none">Voluntários</a>
+							</li>
+							<li class="mb-2">
+								<a href="agendamento.html" class="text-muted text-decoration-none">Agendamento</a>
+							</li>
+							<li class="mb-2">
+								<a href="blog.html" class="text-muted text-decoration-none">Blog</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Suporte</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="faq.html" class="text-muted text-decoration-none">FAQ</a>
+							</li>
+							<li class="mb-2">
+								<a href="contato.html" class="text-muted text-decoration-none">Contato</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Termos de Uso</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Política de
+									Privacidade</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Emergência</h5>
+						<p class="text-muted small mb-2">Em caso de emergência, ligue:</p>
+						<p class="h4 fw-bold text-teal">188</p>
+						<p class="text-muted small mt-2">Centro de Valorização da Vida (CVV)</p>
+					</div>
+				</div>
+				<div class="border-top mt-5 pt-4 text-center text-muted small">
+					<p>&copy;
+						<script>document.write(new Date().getFullYear())</script> Rede de Apoio para Saúde Mental. Todos os
+						direitos reservados.
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

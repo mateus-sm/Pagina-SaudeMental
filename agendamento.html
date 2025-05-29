@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Agendamento | Rede de Apoio</title>
+		<meta name="description" content="Agende uma consulta ou participe de um grupo de apoio">
+
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+		<!-- Flatpickr CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+		<!-- Full Calendar -->
+		<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
+
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="script/olaNome.js" defer></script>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header class="sticky-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="index.html">
+						<div class="rounded-circle bg-teal p-1 me-2">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-white bi-heart-pulse" viewBox="0 0 16 16">
+								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
+								<path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
+							</svg>
+						</div>
+						<span class="fw-bold text-teal">Rede de Apoio</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav me-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Início</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="voluntarios.html">Voluntários</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="agendamento.html">Agendamento</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="blog.html">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="faq.html">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contato.html">Contato</a>
+							</li>
+						</ul>
+						<div id="area-login" class="d-flex gap-2">
+							<!-- Injetado por JS -->
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="container py-5 py-md-7">
+				<div class="text-center mb-5">
+					<h1 class="display-5 fw-bold mb-3">Agendamento</h1>
+					<p class="lead text-muted mx-auto" style="max-width: 700px;">
+						Agende uma consulta ou participe de um grupo de apoio.
+					</p>
+				</div>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<ul class="nav nav-tabs mb-4" id="agendamentoTab" role="tablist">
+							<li class="nav-item" role="presentation">
+								<button class="nav-link active" id="individual-tab" data-bs-toggle="tab"
+									data-bs-target="#individual" type="button" role="tab" aria-controls="individual"
+									aria-selected="true">Atendimento Individual</button>
+							</li>
+							<li class="nav-item" role="presentation">
+								<button class="nav-link" id="grupo-tab" data-bs-toggle="tab" data-bs-target="#grupo"
+									type="button" role="tab" aria-controls="grupo" aria-selected="false">Grupo de
+									Apoio</button>
+							</li>
+						</ul>
+						<div class="tab-content" id="agendamentoTabContent">
+							<!-- Atendimento Individual -->
+							<div class="tab-pane fade show active" id="individual" role="tabpanel"
+								aria-labelledby="individual-tab">
+								<div class="card border-0 shadow-sm">
+									<div class="card-header bg-white border-0 pt-4">
+										<h2 class="h4 mb-1">Agendar Consulta Individual</h2>
+									</div>
+									<div class="card-body">
+										<form>
+											<div class="row mb-4">
+												<div class="col-md-6 mb-4 mb-md-0">
+													<label for="data" class="form-label">Selecione uma data</label>
+													<!-- Calendário à esquerda -->
+													<div id='calendar' class="bg-light text-dark p-3 rounded"></div>
+												</div>
+												<div class="col-md-6">
+													<div>
+														<h4>Consultas Agendadas</h4>
+														<ul id="listaConsultas" class="list-group text-start">
+															<!-- Consultas serão adicionadas aqui -->
+														</ul>
+													</div>
+												</div>
+											</div>
+											<button type="submit" class="btn btn-teal w-100">Confirmar Agendamento</button>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<!-- Grupo de Apoio -->
+							<div class="tab-pane fade" id="grupo" role="tabpanel" aria-labelledby="grupo-tab">
+								<div class="card border-0 shadow-sm">
+									<div class="card-header bg-white border-0 pt-4">
+										<h2 class="h4 mb-1">Participar de Grupo de Apoio</h2>
+										<p class="text-muted">Escolha um grupo de apoio e inscreva-se para participar.</p>
+									</div>
+									<div class="card-body">
+										<form>
+											<div class="mb-4">
+												<label for="grupo-apoio" class="form-label">Selecione um grupo</label>
+												<select class="form-select" id="grupo-apoio">
+													<option selected disabled>Escolha um grupo de apoio</option>
+													<option value="superacao">Grupo Superação - Depressão e Luto</option>
+													<option value="equilibrio">Grupo Equilíbrio - Ansiedade e Estresse
+													</option>
+													<option value="autoestima">Grupo Autoestima - Desenvolvimento Pessoal
+													</option>
+													<option value="familia">Grupo Família - Relacionamentos</option>
+												</select>
+											</div>
+
+											<div class="bg-light rounded p-4 mb-4">
+												<h3 class="h5 mb-2">Grupo Superação - Depressão e Luto</h3>
+												<p class="text-muted small mb-3">
+													Grupo de apoio facilitado por psicólogos voluntários, focado em
+													compartilhar experiências e
+													estratégias para superar a depressão e processos de luto.
+												</p>
+												<div class="small">
+													<p class="mb-1"><span class="fw-medium">Facilitador:</span> Dra. Ana
+														Silva</p>
+													<p class="mb-1"><span class="fw-medium">Encontros:</span> Sábados,
+														10h-12h</p>
+													<p class="mb-1"><span class="fw-medium">Formato:</span> Online (via
+														Zoom)</p>
+													<p class="mb-1"><span class="fw-medium">Vagas:</span> 12 participantes
+													</p>
+													<p class="mb-0"><span class="fw-medium">Próxima data:</span> 20/04/2024
+													</p>
+												</div>
+											</div>
+
+											<div class="mb-4">
+												<label for="expectativas" class="form-label">O que você espera deste grupo?
+													(opcional)</label>
+												<textarea class="form-control" id="expectativas" rows="4"
+													placeholder="Compartilhe brevemente suas expectativas para participar deste grupo"></textarea>
+											</div>
+											<button type="submit" class="btn btn-teal w-100">Inscrever-se no Grupo</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-white border-top py-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Rede de Apoio</h5>
+						<p class="text-muted small">
+							Conectando voluntários a pessoas que precisam de apoio emocional.
+						</p>
+						<div class="d-flex gap-3 mt-3">
+							<a href="#" class="text-muted">
+								<i class="bi bi-facebook"></i>
+								<span class="visually-hidden">Facebook</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-instagram"></i>
+								<span class="visually-hidden">Instagram</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-twitter"></i>
+								<span class="visually-hidden">Twitter</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Links Rápidos</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="index.html" class="text-muted text-decoration-none">Início</a>
+							</li>
+							<li class="mb-2">
+								<a href="voluntarios.html" class="text-muted text-decoration-none">Voluntários</a>
+							</li>
+							<li class="mb-2">
+								<a href="agendamento.html" class="text-muted text-decoration-none">Agendamento</a>
+							</li>
+							<li class="mb-2">
+								<a href="blog.html" class="text-muted text-decoration-none">Blog</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Suporte</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="faq.html" class="text-muted text-decoration-none">FAQ</a>
+							</li>
+							<li class="mb-2">
+								<a href="contato.html" class="text-muted text-decoration-none">Contato</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Termos de Uso</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Política de
+									Privacidade</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Emergência</h5>
+						<p class="text-muted small mb-2">Em caso de emergência, ligue:</p>
+						<p class="h4 fw-bold text-teal">188</p>
+						<p class="text-muted small mt-2">Centro de Valorização da Vida (CVV)</p>
+					</div>
+				</div>
+				<div class="border-top mt-5 pt-4 text-center text-muted small">
+					<p>&copy;
+						<script>document.write(new Date().getFullYear())</script> Rede de Apoio para Saúde Mental. Todos os
+						direitos reservados.
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+		<!-- Flatpickr JS -->
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				flatpickr("#data", {
+					dateFormat: "d/m/Y",
+					minDate: "today",
+					locale: {
+						firstDayOfWeek: 1,
+						weekdays: {
+							shorthand: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+							longhand: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+						},
+						months: {
+							shorthand: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+							longhand: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+						}
+					}
+				});
+			});
+
+			// Full Calendar
+			document.addEventListener('DOMContentLoaded', function () {
+				const calendarEl = document.getElementById('calendar');
+				const listaEl = document.getElementById('listaConsultas');
+				let storedEvents = JSON.parse(localStorage.getItem("consultaSalvos")) || [];
+
+				function atualizarLista() {
+					listaEl.innerHTML = '';
+					storedEvents.forEach(e => {
+						const item = document.createElement('li');
+						item.className = "list-group-item";
+						const data = new Date(e.start);
+						item.textContent = `${e.title} - ${data.toLocaleDateString('pt-BR')}`;
+						listaEl.appendChild(item);
+					});
+				}
+
+				const calendar = new FullCalendar.Calendar(calendarEl, {
+					initialView: 'dayGridMonth',
+					selectable: true,
+					aspectRatio: 1.6,
+					events: storedEvents,
+
+					dateClick: function (info) {
+						const title = prompt("Digite o título da consulta:");
+						if (title) {
+							// Corrigir fuso: gerar nova data sem hora
+							const dataCerta = new Date(info.dateStr + 'T00:00:00');
+							const novaConsulta = {
+								title: title,
+								start: dataCerta.toISOString(),
+								allDay: true
+							};
+							calendar.addEvent(novaConsulta);
+							storedEvents.push(novaConsulta);
+							localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+							atualizarLista();
+						}
+					},
+
+					eventClick: function (info) {
+						const confirmDelete = confirm(`Deseja remover a consulta "${info.event.title}"?`);
+						if (confirmDelete) {
+							info.event.remove();
+							storedEvents = storedEvents.filter(e =>
+								!(e.title === info.event.title && e.start === info.event.startStr)
+							);
+							localStorage.setItem("consultaSalvos", JSON.stringify(storedEvents));
+							atualizarLista();
+						}
+					}
+				});
+
+				calendar.render();
+				atualizarLista();
+			});
+		</script>
+	</body>
+</html>

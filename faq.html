@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>FAQ | Rede de Apoio</title>
+		<meta name="description" content="Perguntas frequentes sobre a Rede de Apoio para Saúde Mental">
+		
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="script/olaNome.js" defer></script>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header class="sticky-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="index.html">
+						<div class="rounded-circle bg-teal p-1 me-2">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-white bi-heart-pulse" viewBox="0 0 16 16">
+								<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5"/>
+								<path d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z"/>
+							</svg>
+						</div>
+						<span class="fw-bold text-teal">Rede de Apoio</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav me-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Início</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="voluntarios.html">Voluntários</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="agendamento.html">Agendamento</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="blog.html">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="faq.html">FAQ</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contato.html">Contato</a>
+							</li>
+						</ul>
+						<div id="area-login" class="d-flex gap-2">
+							<!-- Injetado por JS -->
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="container py-5 py-md-7">
+				<div class="text-center mb-5">
+					<h1 class="display-5 fw-bold mb-3">Perguntas Frequentes</h1>
+					<p class="lead text-muted mx-auto" style="max-width: 700px;">
+						Encontre respostas para as dúvidas mais comuns sobre nossa plataforma.
+					</p>
+				</div>
+
+				<!-- Busca -->
+				<!-- <div class="d-flex justify-content-center mb-5">
+					<div class="input-group" style="max-width: 500px;">
+						<span class="input-group-text bg-white border-end-0">
+							<i class="bi bi-search text-muted"></i>
+						</span>
+						<input type="search" class="form-control border-start-0" placeholder="Buscar perguntas">
+					</div>
+				</div> -->
+
+				<!-- FAQ por categorias -->
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="accordion" id="faqAccordion">
+							<!-- Categoria 1: Sobre a Plataforma -->
+							<div class="card border-0 shadow-sm mb-4">
+								<div class="card-header bg-white py-3">
+									<h2 class="h4 mb-1">Sobre a Plataforma</h2>
+									<p class="text-muted small mb-0">Perguntas frequentes sobre a plataforma</p>
+								</div>
+								<div class="card-body">
+									<div class="accordion" id="accordionPlataforma">
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingOne">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseOne"
+													aria-expanded="false" aria-controls="collapseOne">
+													Como funciona a plataforma?
+												</button>
+											</h3>
+											<div id="collapseOne" class="accordion-collapse collapse"
+												aria-labelledby="headingOne" data-bs-parent="#accordionPlataforma">
+												<div class="accordion-body text-muted">
+													A Rede de Apoio para Saúde Mental é uma plataforma que conecta pessoas
+													que precisam de apoio emocional a profissionais e grupos voluntários.
+													Após criar uma conta, você pode buscar por profissionais ou grupos de
+													apoio, agendar consultas individuais ou participar de grupos, tudo de
+													forma gratuita.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingTwo">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+													aria-expanded="false" aria-controls="collapseTwo">
+													Os atendimentos são gratuitos?
+												</button>
+											</h3>
+											<div id="collapseTwo" class="accordion-collapse collapse"
+												aria-labelledby="headingTwo" data-bs-parent="#accordionPlataforma">
+												<div class="accordion-body text-muted">
+													Sim, todos os atendimentos oferecidos na plataforma são gratuitos.
+													Nossos voluntários doam seu tempo e conhecimento para ajudar pessoas que
+													precisam de apoio emocional.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0">
+											<h3 class="accordion-header" id="headingThree">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseThree"
+													aria-expanded="false" aria-controls="collapseThree">
+													Quais tipos de apoio posso encontrar na plataforma?
+												</button>
+											</h3>
+											<div id="collapseThree" class="accordion-collapse collapse"
+												aria-labelledby="headingThree" data-bs-parent="#accordionPlataforma">
+												<div class="accordion-body text-muted">
+													Na plataforma, você pode encontrar atendimento psicológico individual,
+													consultas com psiquiatras, sessões com terapeutas holísticos e
+													participação em grupos de apoio sobre diversos temas relacionados à
+													saúde mental.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Categoria 2: Cadastro e Acesso -->
+							<div class="card border-0 shadow-sm mb-4">
+								<div class="card-header bg-white py-3">
+									<h2 class="h4 mb-1">Cadastro e Acesso</h2>
+									<p class="text-muted small mb-0">Perguntas frequentes sobre cadastro e acesso</p>
+								</div>
+								<div class="card-body">
+									<div class="accordion" id="accordionCadastro">
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingFour">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseFour"
+													aria-expanded="false" aria-controls="collapseFour">
+													Como faço para me cadastrar como usuário?
+												</button>
+											</h3>
+											<div id="collapseFour" class="accordion-collapse collapse"
+												aria-labelledby="headingFour" data-bs-parent="#accordionCadastro">
+												<div class="accordion-body text-muted">
+													Para se cadastrar como usuário, clique no botão 'Cadastrar' no menu
+													superior, selecione a opção 'Busco Ajuda' e preencha o formulário com
+													seus dados. Após confirmar seu e-mail, você já poderá acessar a
+													plataforma.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingFive">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseFive"
+													aria-expanded="false" aria-controls="collapseFive">
+													Como faço para me cadastrar como voluntário?
+												</button>
+											</h3>
+											<div id="collapseFive" class="accordion-collapse collapse"
+												aria-labelledby="headingFive" data-bs-parent="#accordionCadastro">
+												<div class="accordion-body text-muted">
+													Para se cadastrar como voluntário, clique no botão 'Cadastrar' no menu
+													superior, selecione a opção 'Quero Ajudar' e preencha o formulário com
+													seus dados profissionais. Nossa equipe irá analisar seu cadastro e
+													entrar em contato para verificar suas credenciais e disponibilidade.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0">
+											<h3 class="accordion-header" id="headingSix">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseSix"
+													aria-expanded="false" aria-controls="collapseSix">
+													Esqueci minha senha, como recuperá-la?
+												</button>
+											</h3>
+											<div id="collapseSix" class="accordion-collapse collapse"
+												aria-labelledby="headingSix" data-bs-parent="#accordionCadastro">
+												<div class="accordion-body text-muted">
+													Na página de login, clique em 'Esqueceu a senha?' e siga as instruções
+													para redefinir sua senha. Você receberá um e-mail com um link para criar
+													uma nova senha.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Categoria 3: Privacidade e Segurança -->
+							<div class="card border-0 shadow-sm mb-4">
+								<div class="card-header bg-white py-3">
+									<h2 class="h4 mb-1">Privacidade e Segurança</h2>
+									<p class="text-muted small mb-0">Perguntas frequentes sobre privacidade e segurança</p>
+								</div>
+								<div class="card-body">
+									<div class="accordion" id="accordionPrivacidade">
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingSeven">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+													aria-expanded="false" aria-controls="collapseSeven">
+													O site garante o anonimato dos usuários?
+												</button>
+											</h3>
+											<div id="collapseSeven" class="accordion-collapse collapse"
+												aria-labelledby="headingSeven" data-bs-parent="#accordionPrivacidade">
+												<div class="accordion-body text-muted">
+													Sim, garantimos a confidencialidade de todos os usuários. Suas
+													informações pessoais não são compartilhadas com outros usuários da
+													plataforma. Nos grupos de apoio, você pode escolher usar apenas seu
+													primeiro nome ou um apelido.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingEight">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseEight"
+													aria-expanded="false" aria-controls="collapseEight">
+													Como meus dados são protegidos?
+												</button>
+											</h3>
+											<div id="collapseEight" class="accordion-collapse collapse"
+												aria-labelledby="headingEight" data-bs-parent="#accordionPrivacidade">
+												<div class="accordion-body text-muted">
+													Utilizamos tecnologias avançadas de criptografia para proteger seus
+													dados pessoais. Além disso, seguimos rigorosamente a Lei Geral de
+													Proteção de Dados (LGPD) e nossos voluntários seguem códigos de ética
+													profissional que garantem o sigilo das informações compartilhadas.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0">
+											<h3 class="accordion-header" id="headingNine">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseNine"
+													aria-expanded="false" aria-controls="collapseNine">
+													As sessões online são seguras?
+												</button>
+											</h3>
+											<div id="collapseNine" class="accordion-collapse collapse"
+												aria-labelledby="headingNine" data-bs-parent="#accordionPrivacidade">
+												<div class="accordion-body text-muted">
+													Sim, todas as sessões online são realizadas através de plataformas
+													seguras com criptografia de ponta a ponta. Apenas você e o profissional
+													ou grupo terão acesso ao conteúdo das sessões.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Categoria 4: Atendimentos -->
+							<div class="card border-0 shadow-sm mb-4">
+								<div class="card-header bg-white py-3">
+									<h2 class="h4 mb-1">Atendimentos</h2>
+									<p class="text-muted small mb-0">Perguntas frequentes sobre atendimentos</p>
+								</div>
+								<div class="card-body">
+									<div class="accordion" id="accordionAtendimentos">
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingTen">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseTen"
+													aria-expanded="false" aria-controls="collapseTen">
+													Como funciona o agendamento de consultas?
+												</button>
+											</h3>
+											<div id="collapseTen" class="accordion-collapse collapse"
+												aria-labelledby="headingTen" data-bs-parent="#accordionAtendimentos">
+												<div class="accordion-body text-muted">
+													Para agendar uma consulta, acesse a página de Voluntários, escolha um
+													profissional e clique em 'Agendar Consulta'. Você poderá selecionar a
+													data, horário e formato do atendimento (online ou presencial) de acordo
+													com a disponibilidade do profissional.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingEleven">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseEleven"
+													aria-expanded="false" aria-controls="collapseEleven">
+													Posso remarcar ou cancelar uma consulta?
+												</button>
+											</h3>
+											<div id="collapseEleven" class="accordion-collapse collapse"
+												aria-labelledby="headingEleven" data-bs-parent="#accordionAtendimentos">
+												<div class="accordion-body text-muted">
+													Sim, você pode remarcar ou cancelar uma consulta até 24 horas antes do
+													horário agendado. Para isso, acesse seu perfil, vá em 'Minhas Consultas'
+													e selecione a opção desejada.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingTwelve">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseTwelve"
+													aria-expanded="false" aria-controls="collapseTwelve">
+													Como participar dos grupos de apoio?
+												</button>
+											</h3>
+											<div id="collapseTwelve" class="accordion-collapse collapse"
+												aria-labelledby="headingTwelve" data-bs-parent="#accordionAtendimentos">
+												<div class="accordion-body text-muted">
+													Para participar de um grupo de apoio, acesse a página de Agendamento,
+													selecione a opção 'Grupo de Apoio', escolha o grupo de seu interesse e
+													clique em 'Inscrever-se'. Você receberá um e-mail com as informações de
+													acesso para o próximo encontro.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0">
+											<h3 class="accordion-header" id="headingThirteen">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseThirteen"
+													aria-expanded="false" aria-controls="collapseThirteen">
+													Há atendimento para emergências psicológicas?
+												</button>
+											</h3>
+											<div id="collapseThirteen" class="accordion-collapse collapse"
+												aria-labelledby="headingThirteen" data-bs-parent="#accordionAtendimentos">
+												<div class="accordion-body text-muted">
+													Nossa plataforma não oferece atendimento de emergência. Em caso de crise
+													ou emergência psicológica, recomendamos entrar em contato com o Centro
+													de Valorização da Vida (CVV) pelo telefone 188 ou procurar o serviço de
+													emergência mais próximo.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Categoria 5: Outras Dúvidas -->
+							<div class="card border-0 shadow-sm mb-4">
+								<div class="card-header bg-white py-3">
+									<h2 class="h4 mb-1">Outras Dúvidas</h2>
+									<p class="text-muted small mb-0">Perguntas frequentes diversas</p>
+								</div>
+								<div class="card-body">
+									<div class="accordion" id="accordionOutras">
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingFourteen">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseFourteen"
+													aria-expanded="false" aria-controls="collapseFourteen">
+													Posso fazer doações para a plataforma?
+												</button>
+											</h3>
+											<div id="collapseFourteen" class="accordion-collapse collapse"
+												aria-labelledby="headingFourteen" data-bs-parent="#accordionOutras">
+												<div class="accordion-body text-muted">
+													Sim, aceitamos doações para manter a plataforma funcionando e expandir
+													nossos serviços. Acesse a página 'Apoie o Projeto' para conhecer as
+													formas de contribuir.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0 border-bottom">
+											<h3 class="accordion-header" id="headingFifteen">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseFifteen"
+													aria-expanded="false" aria-controls="collapseFifteen">
+													Como posso dar feedback sobre a plataforma ou um atendimento?
+												</button>
+											</h3>
+											<div id="collapseFifteen" class="accordion-collapse collapse"
+												aria-labelledby="headingFifteen" data-bs-parent="#accordionOutras">
+												<div class="accordion-body text-muted">
+													Valorizamos muito seu feedback! Após cada atendimento, você receberá um
+													formulário de avaliação. Além disso, você pode enviar sugestões, elogios
+													ou reclamações através da página de Contato.
+												</div>
+											</div>
+										</div>
+										<div class="accordion-item border-0">
+											<h3 class="accordion-header" id="headingSixteen">
+												<button class="accordion-button collapsed" type="button"
+													data-bs-toggle="collapse" data-bs-target="#collapseSixteen"
+													aria-expanded="false" aria-controls="collapseSixteen">
+													Vocês oferecem certificados para os voluntários?
+												</button>
+											</h3>
+											<div id="collapseSixteen" class="accordion-collapse collapse"
+												aria-labelledby="headingSixteen" data-bs-parent="#accordionOutras">
+												<div class="accordion-body text-muted">
+													Sim, oferecemos certificados de participação para todos os voluntários
+													ativos na plataforma. O certificado especifica o número de horas
+													dedicadas e pode ser utilizado para fins curriculares.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Não encontrou sua pergunta -->
+						<div class="text-center mt-5">
+							<p class="text-muted mb-3">Não encontrou a resposta que procurava?</p>
+							<a href="contato.html" class="btn btn-teal">Entre em Contato</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-white border-top py-5">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Rede de Apoio</h5>
+						<p class="text-muted small">
+							Conectando voluntários a pessoas que precisam de apoio emocional.
+						</p>
+						<div class="d-flex gap-3 mt-3">
+							<a href="#" class="text-muted">
+								<i class="bi bi-facebook"></i>
+								<span class="visually-hidden">Facebook</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-instagram"></i>
+								<span class="visually-hidden">Instagram</span>
+							</a>
+							<a href="#" class="text-muted">
+								<i class="bi bi-twitter"></i>
+								<span class="visually-hidden">Twitter</span>
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Links Rápidos</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="index.html" class="text-muted text-decoration-none">Início</a>
+							</li>
+							<li class="mb-2">
+								<a href="voluntarios.html" class="text-muted text-decoration-none">Voluntários</a>
+							</li>
+							<li class="mb-2">
+								<a href="agendamento.html" class="text-muted text-decoration-none">Agendamento</a>
+							</li>
+							<li class="mb-2">
+								<a href="blog.html" class="text-muted text-decoration-none">Blog</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Suporte</h5>
+						<ul class="list-unstyled">
+							<li class="mb-2">
+								<a href="faq.html" class="text-muted text-decoration-none">FAQ</a>
+							</li>
+							<li class="mb-2">
+								<a href="contato.html" class="text-muted text-decoration-none">Contato</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Termos de Uso</a>
+							</li>
+							<li class="mb-2">
+								<a href="#" class="text-muted text-decoration-none">Política de
+									Privacidade</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<h5 class="mb-4">Emergência</h5>
+						<p class="text-muted small mb-2">Em caso de emergência, ligue:</p>
+						<p class="h4 fw-bold text-teal">188</p>
+						<p class="text-muted small mt-2">Centro de Valorização da Vida (CVV)</p>
+					</div>
+				</div>
+				<div class="border-top mt-5 pt-4 text-center text-muted small">
+					<p>&copy;
+						<script>document.write(new Date().getFullYear())</script> Rede de Apoio para Saúde Mental. Todos os
+						direitos reservados.
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

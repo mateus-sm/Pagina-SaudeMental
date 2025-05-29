@@ -1,0 +1,132 @@
+/* Cores personalizadas */
+:root {
+  --teal: #167a7a;
+  --teal-light: #e9f7f7;
+  --teal-dark: #0e5858;
+}
+
+/* Utilitários de cores */
+.bg-teal {
+  background-color: var(--teal) !important;
+}
+
+.bg-teal-100 {
+  background-color: var(--teal-light) !important;
+}
+
+.text-teal {
+  color: var(--teal) !important;
+}
+
+/* Gradientes */
+.bg-gradient-to-b.from-teal-50.to-white {
+  background: linear-gradient(to bottom, var(--teal-light), #ffffff);
+}
+
+/* Botões */
+.btn-teal {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.btn-teal:hover,
+.btn-teal:focus {
+  background-color: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: #fff;
+}
+
+.btn-outline-teal {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.btn-outline-teal:hover,
+.btn-outline-teal:focus {
+  background-color: var(--teal);
+  color: #fff;
+}
+
+.btn-outline-teal.active {
+  background-color: var(--teal-light);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* Links */
+a {
+  color: var(--teal);
+}
+
+a:hover {
+  color: var(--teal-dark);
+}
+
+/* Navegação */
+.navbar .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link.active {
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: var(--teal);
+}
+
+/* Formulários */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.25rem rgba(22, 122, 122, 0.25);
+}
+
+/* Badges */
+.badge.bg-teal-100.text-teal {
+  font-weight: 500;
+}
+
+/* Accordion */
+.accordion-button:not(.collapsed) {
+  background-color: var(--teal-light);
+  color: var(--teal);
+}
+
+.accordion-button:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.25rem rgba(22, 122, 122, 0.25);
+}
+
+/* Paginação */
+.page-item.active .page-link {
+  background-color: var(--teal);
+  border-color: var(--teal);
+}
+
+.page-link {
+  color: var(--teal);
+}
+
+.page-link:hover {
+  color: var(--teal-dark);
+}
+
+/* Espaçamento */
+.py-md-7 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+/* Responsividade */
+@media (max-width: 767.98px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+  }
+}
