@@ -42,11 +42,13 @@ formUsuario.addEventListener('submit', function (e) {
 
     if (senha !== confirmarSenha) {
         confirmarSenhaUsuario.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
         return;
+    } else {
+        confirmarSenhaUsuario.classList.remove('is-invalid');
+        confirmarSenhaUsuario.classList.add('is-valid');
     }
-
-    confirmarSenhaUsuario.classList.remove('is-invalid');
-    confirmarSenhaUsuario.classList.add('is-valid');
 
     const usuario = { nome, sobrenome, email, senha, tipoApoio };
     localStorage.setItem(email, JSON.stringify(usuario));
@@ -57,19 +59,7 @@ formUsuario.addEventListener('submit', function (e) {
 
 // === Formulário do Voluntário ===
 const formVoluntario = document.getElementById('form-voluntario');
-const mensagemSucessoVoluntario = formVoluntario.nextElementSibling;
-
-async function validaCNPJ(CNPJ) {
-    CNPJ = CNPJ.replace(/[\.\-\/]/g, '');
-    const url = `https://minhareceita.org/${CNPJ}`;
-
-    try {
-        const response = await fetch(url);
-        return response.status === 200;
-    } catch {
-        return false;
-    }
-}
+const mensagemSucessoVoluntario = document.getElementById('mensagem-sucesso-voluntario');
 
 formVoluntario.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -80,6 +70,7 @@ formVoluntario.addEventListener('submit', async function (e) {
     const CNPJe = document.getElementById('cnpj');
     if (!await validaCNPJ(CNPJe.value.trim())) {
         CNPJe.classList.add('is-invalid');
+        alert("cnpj");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -95,6 +86,7 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     if (!regexNome.test(nomeVol)) { //Testar o nome com o regex
         nomeV.classList.add('is-invalid'); //Precisa adicionar uma div la no elemento para aparecer
+        alert("NOME");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -104,12 +96,13 @@ formVoluntario.addEventListener('submit', async function (e) {
     }
 
     //Validação sobrenome
-    const sobrenomeVolE = document.getElementById('sobrenome-vol').value.trim();
+    const sobrenomeVolE = document.getElementById('sobrenome-vol');
     const sobrenomeVol = sobrenomeVolE.value.trim();
     const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
 
     if (!regexSobreNome.test(sobrenomeVol)) { 
         sobrenomeVolE.classList.add('is-invalid');
+        alert("SONR");
         e.preventDefault();
         e.stopPropagation();
         return; 
@@ -119,12 +112,13 @@ formVoluntario.addEventListener('submit', async function (e) {
     }
 
     //Validacao e-mail
-    const emailVolE = document.getElementById('email-vol').value.trim();
+    const emailVolE = document.getElementById('email-vol');
     const emailVol = emailVolE.value.trim();
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexEmail.test(emailVol)) {
         emailVolE.classList.add('is-invalid');
+        alert("cnpEMAI");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -140,6 +134,7 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     if (!regexLogradouro.test(logradouro) || logradouro.length < 3) {
         logradouroE.classList.add('is-invalid');
+        alert("LOGR");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -150,14 +145,15 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     //Validacao profissao
     const profissaoE = document.getElementById('profissao');
-    const profissao = logradouroE.value.trim();
+    const profissao = profissaoE.value.trim();
     const regexProfissao = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,\-\/]+$/;
 
     if (!regexProfissao.test(profissao) || profissao.length < 3) {
         profissaoE.classList.add('is-invalid');
+        alert("ASDSADA");
         e.preventDefault();
         e.stopPropagation();
-        return
+        return;
     } else {
         profissaoE.classList.remove('is-invalid');
         profissaoE.classList.add('is-valid');
@@ -165,15 +161,19 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     //Valida Senha
     const senhaVolE = document.getElementById('senha-vol');
-    const confirmarSenhaVolE = document.getElementById('confirmar-senha-vol');
     const senhaVol = senhaVolE.value;
+    const confirmarSenhaVolE = document.getElementById('confirmar-senha-vol');
     const confirmarSenhaVol = confirmarSenhaVolE.value;
 
     if (senhaVol !== confirmarSenhaVol) {
         confirmarSenhaVol.classList.add('is-invalid');
+        alert("cSENHA");
         e.preventDefault();
         e.stopPropagation();
         return;
+    } else {
+        confirmarSenhaVol.classList.remove('is-invalid');
+        confirmarSenhaVol.classList.add('is-valid');
     }
 
     //Valida CPF
@@ -182,6 +182,7 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     if (!validarCPF(cpf)) {
         cpfE.classList.add('is-invalid');
+        alert("CPFAAAAAA");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -192,32 +193,39 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     //valida CEP
     const cepE = document.getElementById('cep');
-    const regexCEP = /^\d{5}-\d{3}$/;
-
+    const regexCEP = /^\d{8}$/;
     let cep = cepE.value.trim().replace(/\D/g, ''); // Remove tudo que não é número
 
-
-    if(!regexCEP.test(cep)){
+    if (!regexCEP.test(cep)) {
         cepE.classList.add('is-invalid');
+        alert("CEP");
         e.preventDefault();
         e.stopPropagation();
         return;
-    }else{
+    } else {
         cepE.classList.remove('is-invalid');
         cepE.classList.add('is-valid');
     }
-
-    confirmarSenhaVol.classList.remove('is-invalid');
-    confirmarSenhaVol.classList.add('is-valid');
     
     //window.location.href = "cadastro.html#voluntario";
-    const voluntario = { nomeVol, sobrenomeVol, emailVol, profissao, registro, senhaVol, tipoVoluntariado };
+    const voluntario = { nomeVol, sobrenomeVol, emailVol, profissao, senhaVol, tipoVoluntariado };
     localStorage.setItem(emailVol, JSON.stringify(voluntario));
 
     formVoluntario.classList.add('d-none');
     mensagemSucessoVoluntario.classList.remove('d-none');
-
 });
+
+async function validaCNPJ(CNPJ) {
+    CNPJ = CNPJ.replace(/[\.\-\/]/g, '');
+    const url = `https://minhareceita.org/${CNPJ}`;
+
+    try {
+        const response = await fetch(url);
+        return response.status === 200;
+    } catch {
+        return false;
+    }
+}
 
 //validacao de CPF
 function validarCPF(cpf) {
@@ -273,7 +281,7 @@ telefoneInput.addEventListener('input', function (e) {
 });
 
 
-// ===================== MÁSCARA DE CEP =====================
+// ===================== MÁSCARA DE CPF =====================
 function mascaraCPF(input) {
     let cpf = input.value.replace(/\D/g, ''); // Remove tudo que não for número
 

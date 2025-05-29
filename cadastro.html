@@ -217,13 +217,6 @@
                                                 <input type="date" class="form-control" id="data-nascimento">
                                             </div>
 
-											<div class="mb-3">
-												<label for="cnpj" class="form-label">CNPJ (opcional)</label>
-												<input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00">
-												<div class="invalid-feedback">
-													Digite um CNPJ válido.
-												</div>
-											</div>
 
                                             <div class="mb-3">
                                                 <label for="telefone" class="form-label">Telefone</label>
@@ -367,14 +360,12 @@
                                             <p class="text-center text-muted small">
                                                 Já tem uma conta? <a href="login.html" class="text-teal text-decoration-none">Faça login</a>
                                             </p>
-                                            </form>
-
-                                            <div id="mensagem-sucesso-voluntario" class="text-center d-none">
-                                                <h4 class="text-success">Cadastro de voluntário realizado com sucesso!</h4>
-                                                <p>Agradecemos seu interesse! Em breve entraremos em contato.</p>
-                                                <a href="index.html" class="btn btn-success mt-3">Voltar para o Início</a>
-                                            </div>
-
+                                        </form>
+										<div id="mensagem-sucesso-voluntario" class="text-center d-none alert alert-success">
+											<h4 class="text-success">Cadastro de voluntário realizado com sucesso!</h4>
+											<p>Agradecemos seu interesse! Em breve entraremos em contato.</p>
+											<a href="index.html" class="btn btn-success mt-3">Voltar para o Início</a>
+										</div>
                                     </div>
                                 </div>
                             </div>
@@ -461,39 +452,19 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         
         <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          // Verifica se a URL contém o hash #voluntario
-          if (window.location.hash === '#voluntario') {
-            // Encontra o botão da aba "Quero Ajudar"
-            var voluntarioTabButton = document.getElementById('voluntario-tab');
-        
-            if (voluntarioTabButton) {
-              // Cria uma instância da aba Bootstrap e a exibe
-              var tab = new bootstrap.Tab(voluntarioTabButton);
-              tab.show();
-            }
-          }
-        });
+			document.addEventListener('DOMContentLoaded', function () {
+			// Verifica se a URL contém o hash #voluntario
+			if (window.location.hash === '#voluntario') {
+				// Encontra o botão da aba "Quero Ajudar"
+				var voluntarioTabButton = document.getElementById('voluntario-tab');
+			
+				if (voluntarioTabButton) {
+				// Cria uma instância da aba Bootstrap e a exibe
+				var tab = new bootstrap.Tab(voluntarioTabButton);
+				tab.show();
+				}
+			}
+			});
         </script>
-
-		<script>
-    const telefoneInput = document.getElementById('telefone');
-
-    telefoneInput.addEventListener('input', function () {
-        // Remove tudo que não for número
-        let numero = this.value.replace(/\D/g, '');
-
-        // Aplica a máscara
-        if (numero.length <= 10) {
-            // Telefone fixo (XX) XXXX-XXXX
-            numero = numero.replace(/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-        } else {
-            // Celular (XX) 9XXXX-XXXX
-            numero = numero.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-        }
-
-        this.value = numero;
-    });
-</script>
     </body>
 </html>
