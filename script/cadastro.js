@@ -64,29 +64,13 @@ const mensagemSucessoVoluntario = document.getElementById('mensagem-sucesso-volu
 formVoluntario.addEventListener('submit', async function (e) {
     e.preventDefault();
     
-    const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
-    
-    //Validar CNPJ
-    const CNPJe = document.getElementById('cnpj');
-    if (!await validaCNPJ(CNPJe.value.trim())) {
-        CNPJe.classList.add('is-invalid');
-        alert("cnpj");
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-    } else {
-        CNPJe.classList.remove('is-invalid');
-        CNPJe.classList.add('is-valid');    
-    }
-
-     // Validação do nome
+    // Validação do nome
     const nomeV = document.getElementById('nome-vol'); //Pegar o elemento do nome
     const nomeVol = nomeV.value.trim(); //Pegar o texto do nome para colocar no JSON mais tarde
     const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ' ]+$/;
 
     if (!regexNome.test(nomeVol)) { //Testar o nome com o regex
-        nomeV.classList.add('is-invalid'); //Precisa adicionar uma div la no elemento para aparecer
-        alert("NOME");
+        nomeV.classList.add('is-invalid');
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -98,11 +82,10 @@ formVoluntario.addEventListener('submit', async function (e) {
     //Validação sobrenome
     const sobrenomeVolE = document.getElementById('sobrenome-vol');
     const sobrenomeVol = sobrenomeVolE.value.trim();
-    const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+    const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ' ]+$/;
 
     if (!regexSobreNome.test(sobrenomeVol)) { 
         sobrenomeVolE.classList.add('is-invalid');
-        alert("SONR");
         e.preventDefault();
         e.stopPropagation();
         return; 
@@ -113,12 +96,11 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     //Validacao e-mail
     const emailVolE = document.getElementById('email-vol');
-    const emailVol = emailVolE.value.trim();
+    const emailVol = emailVolE.value;
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexEmail.test(emailVol)) {
         emailVolE.classList.add('is-invalid');
-        alert("cnpEMAI");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -127,14 +109,55 @@ formVoluntario.addEventListener('submit', async function (e) {
         emailVolE.classList.add('is-valid');
     }
 
+    //Valida CPF
+    const CPFe = document.getElementById('cpf');
+    const CPF = CPFe.value.trim().replace(/[^\d]+/g, '');
+
+    if (!validarCPF(CPF)) {
+        CPFe.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    } else {
+        CPFe.classList.remove('is-invalid');
+        CPFe.classList.add('is-valid');
+    }
+
+    //valida nascimento
+    const nascE = document.getElementById('data-nascimento');
+    const nasc = nascE.value;
+
+    // if (!validarDataNascimento(nasc)) {
+    //     nascE.classList.add('is-invalid');
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     return;
+    // } else {
+    //     nascE.classList.remove('is-invalid');
+    //     nascE.classList.add('is-valid');
+    // }
+
+    //Validar CNPJ
+    const CNPJe = document.getElementById('cnpj');
+    const CNPJ = CNPJe.value.trim();
+    if (!await validaCNPJ(CNPJ)) {
+        CNPJe.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    } else {
+        CNPJe.classList.remove('is-invalid');
+        CNPJe.classList.add('is-valid');    
+    }
+
+
     //Validacao logradouro
     const logradouroE = document.getElementById('logradouro');
     const logradouro = logradouroE.value.trim();
     const regexLogradouro = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,\-\/]+$/;
 
-    if (!regexLogradouro.test(logradouro) || logradouro.length < 3) {
+    if (!regexLogradouro.test(logradouro)) {
         logradouroE.classList.add('is-invalid');
-        alert("LOGR");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -143,14 +166,42 @@ formVoluntario.addEventListener('submit', async function (e) {
         logradouroE.classList.add('is-valid');
     }
 
+    //valida numero endereço
+    const numeroE = document.getElementById('numero');
+    const numero = numeroE.value;
+    const regexNumero = /^\d+$/;
+
+    if (!regexNumero.test(numero)) {
+        numeroE.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    } else {
+        numeroE.classList.remove('is-invalid');
+        numeroE.classList.add('is-valid');
+    }
+
+    const bairroE = document.getElementById('bairro');
+    const bairro = bairroE.value;
+    const regexBairro = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,\-\/]+$/;
+
+    if (!regexBairro.test(bairro)) {
+        bairroE.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    } else {
+        bairroE.classList.remove('is-invalid');
+        bairroE.classList.add('is-valid');
+    }
+
     //Validacao profissao
     const profissaoE = document.getElementById('profissao');
     const profissao = profissaoE.value.trim();
     const regexProfissao = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,\-\/]+$/;
 
-    if (!regexProfissao.test(profissao) || profissao.length < 3) {
+    if (!regexProfissao.test(profissao)) {
         profissaoE.classList.add('is-invalid');
-        alert("ASDSADA");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -159,6 +210,10 @@ formVoluntario.addEventListener('submit', async function (e) {
         profissaoE.classList.add('is-valid');
     }
 
+    const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
+
+    const tipoAtendimento = document.querySelector('input[name="tipoAtendimento"]:checked').value;
+
     //Valida Senha
     const senhaVolE = document.getElementById('senha-vol');
     const senhaVol = senhaVolE.value;
@@ -166,30 +221,15 @@ formVoluntario.addEventListener('submit', async function (e) {
     const confirmarSenhaVol = confirmarSenhaVolE.value;
 
     if (senhaVol !== confirmarSenhaVol) {
-        confirmarSenhaVol.classList.add('is-invalid');
-        alert("cSENHA");
+        confirmarSenhaVolE.classList.add('is-invalid');
         e.preventDefault();
         e.stopPropagation();
         return;
     } else {
-        confirmarSenhaVol.classList.remove('is-invalid');
-        confirmarSenhaVol.classList.add('is-valid');
+        confirmarSenhaVolE.classList.remove('is-invalid');
+        confirmarSenhaVolE.classList.add('is-valid');
     }
 
-    //Valida CPF
-    const cpfE = document.getElementById('cpf');
-    const cpf = cpfE.value.trim().replace(/[^\d]+/g, '');
-
-    if (!validarCPF(cpf)) {
-        cpfE.classList.add('is-invalid');
-        alert("CPFAAAAAA");
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-    } else {
-        cpfE.classList.remove('is-invalid');
-        cpfE.classList.add('is-valid');
-    }
 
     //valida CEP
     const cepE = document.getElementById('cep');
@@ -198,7 +238,6 @@ formVoluntario.addEventListener('submit', async function (e) {
 
     if (!regexCEP.test(cep)) {
         cepE.classList.add('is-invalid');
-        alert("CEP");
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -208,7 +247,7 @@ formVoluntario.addEventListener('submit', async function (e) {
     }
     
     //window.location.href = "cadastro.html#voluntario";
-    const voluntario = { nomeVol, sobrenomeVol, emailVol, profissao, senhaVol, tipoVoluntariado };
+    const voluntario = {nomeVol, sobrenomeVol, emailVol, CPF, CNPJ, nasc, profissao, senhaVol, tipoVoluntariado, tipoAtendimento};
     localStorage.setItem(emailVol, JSON.stringify(voluntario));
 
     formVoluntario.classList.add('d-none');
@@ -246,6 +285,31 @@ function validarCPF(cpf) {
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     return resto === parseInt(cpf.charAt(10));
+}
+
+//validacao de nascimento
+function validarDataNascimento(data) {
+    const regexData = /^\d{2}\/\d{2}\/\d{4}$/;
+
+    // Verifica se o formato está correto
+    if (!regexData.test(data)) {
+        return false;
+    }
+
+    const partes = data.split('/');
+    const dia = parseInt(partes[0], 10);
+    const mes = parseInt(partes[1], 10) - 1; // Meses começam em 0 no JS
+    const ano = parseInt(partes[2], 10);
+
+    const dataNascimento = new Date(ano, mes, dia);
+    const hoje = new Date();
+
+    // Verifica se não é uma data no futuro
+    if (dataNascimento > hoje) {
+        return false;
+    }
+
+    return true;
 }
 
 
@@ -296,4 +360,39 @@ function mascaraCPF(input) {
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Coloca hífen entre o 9º e 10º dígitos
 
     input.value = cpf;
+}
+
+
+//===================== MÁSCARA DE CNPJ =====================
+function mascaraCNPJ(input) {
+    let cnpj = input.value.replace(/\D/g, ''); // Remove tudo que não for número
+
+    // Limita o CNPJ a no máximo 14 dígitos
+    if (cnpj.length > 14) {
+        cnpj = cnpj.slice(0, 14);
+    }
+
+    // Aplica a máscara passo a passo
+    cnpj = cnpj.replace(/(\d{2})(\d)/, '$1.$2');        // 00.000
+    cnpj = cnpj.replace(/(\d{3})(\d)/, '$1.$2');        // 00.000.000
+    cnpj = cnpj.replace(/(\d{3})(\d)/, '$1/$2');        // 00.000.000/0000
+    cnpj = cnpj.replace(/(\d{4})(\d{1,2})$/, '$1-$2');  // 00.000.000/0000-00
+
+    input.value = cnpj;
+}
+
+
+//===================== MÁSCARA DE CEP =====================
+function mascaraCEP(input) {
+    let cep = input.value.replace(/\D/g, ''); // Remove tudo que não for número
+
+    // Limita o CEP a no máximo 8 dígitos
+    if (cep.length > 8) {
+        cep = cep.slice(0, 8);
+    }
+
+    // Aplica a máscara
+    cep = cep.replace(/(\d{5})(\d)/, '$1-$2'); // 00000-000
+
+    input.value = cep;
 }
