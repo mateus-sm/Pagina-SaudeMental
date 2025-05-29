@@ -208,6 +208,20 @@
 				} else {
 					inputEmail.classList.add('is-invalid');
 				}
+
+				const voluntarios = JSON.parse(localStorage.getItem('voluntarios')) || [];
+				const voluntario = voluntarios.find(v => v.emailVol === email);
+
+				if (voluntario) {
+					if (senha === voluntario.senhaVol) {
+						localStorage.setItem('voluntarioLogado', JSON.stringify(voluntario));
+						window.location.href = "index.html"; 
+					} else {
+						inputSenha.classList.add('is-invalid');
+					}
+				} else {
+					inputEmail.classList.add('is-invalid');
+				}
 			});
 		</script>
 	</body>

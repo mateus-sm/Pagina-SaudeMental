@@ -140,14 +140,16 @@ formVoluntario.addEventListener('submit', async function (e) {
     //Validar CNPJ
     const CNPJe = document.getElementById('cnpj');
     const CNPJ = CNPJe.value.trim();
-    if (!await validaCNPJ(CNPJ)) {
-        CNPJe.classList.add('is-invalid');
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-    } else {
-        CNPJe.classList.remove('is-invalid');
-        CNPJe.classList.add('is-valid');    
+    if (CNPJ != "") {
+        if (!await validaCNPJ(CNPJ)) {
+            CNPJe.classList.add('is-invalid');
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        } else {
+            CNPJe.classList.remove('is-invalid');
+            CNPJe.classList.add('is-valid');    
+        }
     }
 
 
@@ -199,7 +201,7 @@ formVoluntario.addEventListener('submit', async function (e) {
     const profissaoE = document.getElementById('profissao');
     const profissao = profissaoE.value.trim();
     const regexProfissao = /^[A-Za-zÀ-ÖØ-öø-ÿ0-9\s.,\-\/]+$/;
-
+    
     if (!regexProfissao.test(profissao)) {
         profissaoE.classList.add('is-invalid');
         e.preventDefault();
@@ -209,10 +211,18 @@ formVoluntario.addEventListener('submit', async function (e) {
         profissaoE.classList.remove('is-invalid');
         profissaoE.classList.add('is-valid');
     }
-
     const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
-
+    
     const tipoAtendimento = document.querySelector('input[name="tipoAtendimento"]:checked').value;
+    // Especialidades
+    const checkboxesMarcados = document.querySelectorAll('input[type="checkbox"]:checked');
+    const especialidades = Array.from(checkboxesMarcados).map(checkbox => checkbox.value);
+    
+    // Descrição
+    const bio = document.getElementById('biografia').value;
+
+    //Disponibilidde
+    const disponibilidade = document.getElementById('disponibilidade').value;
 
     //Valida Senha
     const senhaVolE = document.getElementById('senha-vol');
@@ -230,7 +240,6 @@ formVoluntario.addEventListener('submit', async function (e) {
         confirmarSenhaVolE.classList.add('is-valid');
     }
 
-
     //valida CEP
     const cepE = document.getElementById('cep');
     const regexCEP = /^\d{8}$/;
@@ -246,9 +255,30 @@ formVoluntario.addEventListener('submit', async function (e) {
         cepE.classList.add('is-valid');
     }
     
-    //window.location.href = "cadastro.html#voluntario";
-    const voluntario = {nomeVol, sobrenomeVol, emailVol, CPF, CNPJ, nasc, profissao, senhaVol, tipoVoluntariado, tipoAtendimento};
-    localStorage.setItem(emailVol, JSON.stringify(voluntario));
+    const voluntario = {
+        nomeVol,
+        sobrenomeVol,
+        emailVol,
+        CPF,
+        CNPJ,
+        nasc,
+        especialidades,
+        bio,
+        disponibilidade,
+        profissao,
+        senhaVol,
+        tipoVoluntariado,
+        tipoAtendimento
+    };
+
+    // Recupera a lista atual (ou cria vazia)
+    let voluntarios = JSON.parse(localStorage.getItem('voluntarios')) || [];
+
+    // Adiciona o novo voluntário
+    voluntarios.push(voluntario);
+
+    // Salva de volta como vetor
+    localStorage.setItem('voluntarios', JSON.stringify(voluntarios));
 
     formVoluntario.classList.add('d-none');
     mensagemSucessoVoluntario.classList.remove('d-none');
