@@ -213,7 +213,7 @@
 				const voluntario = voluntarios.find(v => v.emailVol === email);
 
 				if (voluntario) {
-					if (senha === voluntario.senhaVol) {
+					if (senha == voluntario.senhaVol) {
 						localStorage.setItem('voluntarioLogado', JSON.stringify(voluntario));
 						window.location.href = "index.html"; 
 					} else {

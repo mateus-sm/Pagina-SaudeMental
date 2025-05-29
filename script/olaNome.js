@@ -31,7 +31,7 @@ function logout() {
     location.reload();
 }
 
-function logout() {
+function logoutVol() {
     localStorage.removeItem('voluntarioLogado');
     location.reload();
 }
