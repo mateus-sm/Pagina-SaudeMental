@@ -22,18 +22,18 @@ formUsuario.addEventListener('submit', function (e) {
     }
 
     //Validação sobrenome
-    const sobrenome = document.getElementById('sobrenome').value.trim();
-    // const sobrenome = sobrenomeE.value.trim();
-    // const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
-    // if (!regexSobreNome.test(sobrenome)) { 
-    //     sobrenomeE.classList.add('is-invalid');
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     return; 
-    // } else {
-    //     sobrenomeE.classList.remove('is-invalid');
-    //     sobrenomeE.classList.add('is-valid');
-    // }
+    const sobrenomeE = document.getElementById('sobrenome');
+    const sobrenome = sobrenomeE.value.trim();
+    const regexSobreNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+    if (!regexSobreNome.test(sobrenome)) { 
+        sobrenomeE.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return; 
+    } else {
+        sobrenomeE.classList.remove('is-invalid');
+        sobrenomeE.classList.add('is-valid');
+    }
 
     const email = document.getElementById('email').value.trim();
     const senha = senhaUsuario.value;
@@ -61,7 +61,19 @@ const senhaVol = document.getElementById('senha-vol');
 const confirmarSenhaVol = document.getElementById('confirmar-senha-vol');
 const mensagemSucessoVoluntario = formVoluntario.nextElementSibling;
 
-formVoluntario.addEventListener('submit', function (e) {
+async function validaCNPJ(CNPJ) {
+    CNPJ = CNPJ.replace(/[\.\-\/]/g, '');
+    const url = `https://minhareceita.org/${CNPJ}`;
+
+    try {
+        const response = await fetch(url);
+        return response.status === 200;
+    } catch {
+        return false;
+    }
+}
+
+formVoluntario.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const nome = document.getElementById('nome-vol').value.trim();
@@ -72,6 +84,18 @@ formVoluntario.addEventListener('submit', function (e) {
     const senha = senhaVol.value;
     const confirmarSenha = confirmarSenhaVol.value;
     const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
+    
+    //Validar CNPJ
+    const CNPJe = document.getElementById('cnpj');
+    if (!await validaCNPJ(CNPJe.value.trim())) {
+        CNPJe.classList.add('is-invalid');
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    } else {
+        CNPJe.classList.remove('is-invalid');
+        CNPJe.classList.add('is-valid');    
+    }
 
     if (senha !== confirmarSenha) {
         confirmarSenhaVol.classList.add('is-invalid');
