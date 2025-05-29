@@ -30,34 +30,34 @@ formUsuario.addEventListener('submit', function (e) {
 });
 
 // === Formulário do Voluntário ===
-// const formVoluntario = document.getElementById('form-voluntario');
-// const senhaVol = document.getElementById('senha-vol');
-// const confirmarSenhaVol = document.getElementById('confirmar-senha-vol');
-// const mensagemSucessoVoluntario = formVoluntario.nextElementSibling;
+const formVoluntario = document.getElementById('form-voluntario');
+const senhaVol = document.getElementById('senha-vol');
+const confirmarSenhaVol = document.getElementById('confirmar-senha-vol');
+const mensagemSucessoVoluntario = formVoluntario.nextElementSibling;
 
-// formVoluntario.addEventListener('submit', function (e) {
-//     e.preventDefault();
+formVoluntario.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-//     const nome = document.getElementById('nome-vol').value.trim();
-//     const sobrenome = document.getElementById('sobrenome-vol').value.trim();
-//     const email = document.getElementById('email-vol').value.trim();
-//     const profissao = document.getElementById('profissao').value.trim();
-//     const registro = document.getElementById('registro').value.trim();
-//     const senha = senhaVol.value;
-//     const confirmarSenha = confirmarSenhaVol.value;
-//     const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
+    const nome = document.getElementById('nome-vol').value.trim();
+    const sobrenome = document.getElementById('sobrenome-vol').value.trim();
+    const email = document.getElementById('email-vol').value.trim();
+    const profissao = document.getElementById('profissao').value.trim();
+    const registro = document.getElementById('registro').value.trim();
+    const senha = senhaVol.value;
+    const confirmarSenha = confirmarSenhaVol.value;
+    const tipoVoluntariado = document.querySelector('input[name="tipoVoluntariado"]:checked').value;
 
-//     if (senha !== confirmarSenha) {
-//         confirmarSenhaVol.classList.add('is-invalid');
-//         return;
-//     }
+    if (senha !== confirmarSenha) {
+        confirmarSenhaVol.classList.add('is-invalid');
+        return;
+    }
 
-//     confirmarSenhaVol.classList.remove('is-invalid');
-//     confirmarSenhaVol.classList.add('is-valid');
+    confirmarSenhaVol.classList.remove('is-invalid');
+    confirmarSenhaVol.classList.add('is-valid');
 
-//     const voluntario = { nome, sobrenome, email, profissao, registro, senha, tipoVoluntariado };
-//     localStorage.setItem(email, JSON.stringify(voluntario));
+    const voluntario = { nome, sobrenome, email, profissao, registro, senha, tipoVoluntariado };
+    localStorage.setItem(email, JSON.stringify(voluntario));
 
-//     formVoluntario.classList.add('d-none');
-//     mensagemSucessoVoluntario.classList.remove('d-none');
-// });
+    formVoluntario.classList.add('d-none');
+    mensagemSucessoVoluntario.classList.remove('d-none');
+});
